@@ -1,0 +1,26 @@
+.board-wrapper {
+  // border: 5px solid $black;
+  margin: 0 auto;
+  width: 315px;
+  box-sizing: border-box;
+}
+
+.board-line {
+  box-sizing: border-box;
+  border: 2px dotted blue;
+  padding: 5px;
+  width: inherit;
+}
+
+.game-cell {
+  float: left;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.clearfix {
+  overflow: auto;
+}
