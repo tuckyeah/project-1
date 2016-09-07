@@ -38,12 +38,15 @@
 .game-cell {
   @include breakpoint('medium') {
     height: 150px;
+    padding: 15px;
     width: 150px;
   }
 
   @include breakpoint('large') {
     height: 200px;
+    padding: 20px;
     width: 200px;
+
   }
 
   p {
