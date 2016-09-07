@@ -20,13 +20,13 @@
   float: left;
   height: 100px;
   margin: 0 auto;
+  padding: 10px;
   text-align: center;
   width: 100px;
-  padding: 10px;
 
   p {
-    font-size: 50px;
     color: $red;
+    font-size: 50px;
   }
 }
 
@@ -36,6 +36,11 @@
 
 .navbar-right {
   margin: 10px;
+}
+
+.btn {
+  border: 1px solid $black;
+  margin: 0 auto;
 }
 
 h1,

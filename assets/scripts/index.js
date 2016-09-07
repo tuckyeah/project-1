@@ -9,6 +9,6 @@ require('./example');
 let gameEvents = require('./game/events.js');
 
 $(document).ready(function() {
-
+  $('#new-game').hide();
   gameEvents.addHandlers();
 });

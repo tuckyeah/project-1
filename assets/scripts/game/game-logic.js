@@ -153,6 +153,7 @@ const ticTacToe = function(board, moveIndex) {
 
   // if someone won, return true!
   if (playMove(board, moveIndex, player)) {
+    ui.endGame();
     return;
   } else {
   // otherwise, increment currentTurn
