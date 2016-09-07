@@ -32,6 +32,10 @@
   @include breakpoint('small') {
     padding: 5px 10px;
   }
+
+  @include breakpoint('large') {
+    padding: 5px 20px;
+  }
 }
 
 
