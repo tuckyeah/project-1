@@ -2,7 +2,7 @@
 
 const updateBoard = function(board) {
   board.forEach(function(element, index) {
-    $('.game-cell#'+index).text(element);
+    $('.game-cell#'+index).html('<p>'+element+'</p>');
   });
 };
 

@@ -29,7 +29,6 @@ const getBoard = function() {
 
 //returns an array of the indices for either 'x' or 'o'
 const getCurrentBoard = function(board, player) {
-
   let res = [];
 
   // sort through board and collect the index of each 'x'
@@ -56,6 +55,23 @@ const setPlayer = function(currentTurn) {
 
   return player;
 };
+// counts number of empty string spaces in the board and returns a boolean
+const countEmpties = function(board) {
+  let emptySpaces = 0;
+
+  // go through the board and, if it hits an empty space, increment emptySpaces
+  board.forEach(function(element) {
+    if (element === '') {
+      emptySpaces++;
+    }
+  });
+
+  if (emptySpaces > 0) {
+    return false;
+  } else {
+    return true;
+  }
+};
 
 //checks current indices of 'x' against an array of winning combinations
 // of indices
@@ -77,25 +93,11 @@ const checkWin = function(currentBoard) {
   //otherwise, print 'loser :(' and
   for (let i = 0; i < winningCombos.length; i++) {
     if (String(winningCombos[i]) === String(currentBoard)) {
-      // you've won!
+      console.log("Winner!");
       return true;
     }
   }
   return false;
-};
-
-// counts number of empty string spaces in the board and returns that number
-const countEmpties = function(board) {
-  let emptySpaces = 0;
-
-  // go through the board and, if it hits an empty space, increment emptySpaces
-  board.forEach(function(element) {
-    if (element === '') {
-      emptySpaces++;
-    }
-  });
-
-  return emptySpaces;
 };
 
 // checks if there is a draw by running countEmpties
@@ -104,9 +106,7 @@ const isWinner = function(board, player) {
 
   let layout = getCurrentBoard(board, player);
 
-  let empties = countEmpties(board);
-
-  if (empties === 0) {
+  if (countEmpties(board)) {
     console.log("Draw!");
     return true;
   } else {
@@ -136,7 +136,6 @@ const ticTacToe = function(board, moveIndex) {
   let player = setPlayer(currentTurn);
 
   if (playMove(board, moveIndex, player)) {
-    console.log("Winner!");
     return;
   } else {
     currentTurn++;
