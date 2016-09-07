@@ -1,6 +1,6 @@
 'use strict';
 
-let board = ['','','','','','','','',''];
+// let board = ['','','','','','','','',''];
 let currentTurn = 0;
 
 // Functions in this file:
@@ -15,6 +15,20 @@ let currentTurn = 0;
 //    doesn't do anything if there's already something there. Then runs isWinner
 // ticTacToe(board, moveIndex) - sets the player based on current turn, then runs playMove
 //    and increments the currentTurn
+
+const testFunction = function() {
+  console.log("I ran!");
+};
+
+const getBoard = function() {
+  let totalCells = $('.board-wrapper').find('.game-cell').length;
+  let board = [];
+
+  for (let i = 0; i < totalCells; i++) {
+    board[i] = $('.game-cell#'+i).text();
+  }
+  return board;
+};
 
 //returns an array of the indices for either 'x' or 'o'
 const getCurrentBoard = function(board, player) {
@@ -156,13 +170,14 @@ const printBoard = function(board) {
 };
 
 
-module.export = {
+module.exports = {
   ticTacToe,
   isWinner,
-  board,
   playMove,
   checkWin,
   setPlayer,
   getCurrentBoard,
-  printBoard
+  printBoard,
+  getBoard,
+  testFunction,
 };

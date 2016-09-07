@@ -1,14 +1,21 @@
 'use strict';
 
-const onCellClick = () => {
-    // click on a cell, log the index of said cell
+// const ui = require('./ui');
+const game = require('./game-logic');
 
-    // go to the parent, count the index of this child?
-    // collect array of all game-cells?
+// we need a function that will update the board
 
-    // this is all the game-cells in board-wrapper
-    let currentIndex = $('.game-cell').index(this);
-    console.log(currentIndex);
+const onCellClick = (event) => {
+  event.preventDefault();
+
+  // get the index of the current cell
+  let currentIndex = $('.game-cell').index(event.target);
+
+  //populate the gameboard
+  let board = game.getBoard();
+
+  game.ticTacToe(board, currentIndex);
+
 };
 
 

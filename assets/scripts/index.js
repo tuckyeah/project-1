@@ -9,5 +9,6 @@ require('./example');
 let gameEvents = require('./game/events.js');
 
 $(document).ready(function() {
+
   gameEvents.addHandlers();
 });
