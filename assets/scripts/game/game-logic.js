@@ -56,6 +56,7 @@ const setPlayer = function(currentTurn) {
 
   return player;
 };
+
 // counts number of empty string spaces in the board and returns a boolean
 const countEmpties = function(board) {
   let emptySpaces = 0;
@@ -66,7 +67,8 @@ const countEmpties = function(board) {
       emptySpaces++;
     }
   });
-
+  // if there's more than 0 empty spaces, return false (there's still room)
+  // otherwise, return true
   if (emptySpaces > 0) {
     return false;
   } else {
@@ -74,17 +76,20 @@ const countEmpties = function(board) {
   }
 };
 
-const compareArrays = function(arr, arr2) {
-  // this works if only _some_ of the values match
-  let res = arr.every(function(val) {
-     return arr2.indexOf(val) >= 0;
+//compare two arrays, and return true if every value of the second array
+// is contained within the first
+const compareArrays = function(winningCombo, currentBoard) {
+
+  let res = winningCombo.every(function(val) {
+     return currentBoard.indexOf(val) >= 0;
   });
 
   return res;
 };
 
-//checks current indices of 'x' against an array of winning combinations
-// of indices
+// if the currentboard is greater than 3 (eg we've gone more than 3 times)
+// iterate through winning combos and compare them with the current board
+// if they match, return true
 const checkWin = function(currentBoard) {
   const winningCombos = [
     [0, 1, 2],
@@ -97,19 +102,15 @@ const checkWin = function(currentBoard) {
     [2, 4, 6]
   ];
 
-  let bool;
-
+//i don't think I need this horrific ugly loop, but i don't know where else to
+// put the length check otherwise.
   if (currentBoard.length >= 3) {
     for (let i = 0; i < winningCombos.length; i++) {
-      compareArrays(winningCombos[i], currentBoard);
+      if(compareArrays(winningCombos[i], currentBoard)) {
+        return true;
+      }
     }
   }
-
-  // console.log("I'm inside checkWin.");
-  // console.log("The current board is: "+ currentBoard);
-  // console.log("The returned result is: "+bool);
-
-  return bool;
 };
 
 
@@ -138,7 +139,7 @@ const playMove = function(board, moveIndex, player) {
   if (board[moveIndex] === '') {
     board[moveIndex] = player;
   } else {
-    ui.updateGameStatus("That spot is taken!");
+    ui.updateGameStatus("That spot is taken! Lose a turn.");
     return;
   }
   return isWinner(board, player);
