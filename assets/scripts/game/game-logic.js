@@ -133,6 +133,7 @@ const isWinner = function(board, player) {
 };
 
 //play a move only if the spot is empty
+// runs 'isWinner' and returns the value (false if no winner, true if winner)
 const playMove = function(board, moveIndex, player) {
 
   //updates board with move player (x or o, based on what ticTacToe says)
@@ -146,16 +147,15 @@ const playMove = function(board, moveIndex, player) {
 };
 
 // this will be our 'game' function that serves as the 'engine'
-// as of right now, we have to manually enter the board and the move index
-// since i can't figure out how to do that in node -
-// but once we move to a UI setting it'll be a little better
 const ticTacToe = function(board, moveIndex) {
 
   let player = setPlayer(currentTurn);
 
+  // if someone won, return true!
   if (playMove(board, moveIndex, player)) {
     return;
   } else {
+  // otherwise, increment currentTurn
     currentTurn++;
   }
 };
