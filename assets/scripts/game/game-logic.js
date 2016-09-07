@@ -3,19 +3,18 @@
 let board = ['','','','','','','','',''];
 let currentTurn = 0;
 
-// TO DO:
-// !! do some more testing & try to break this - it can't be this easy
-// - also these global variables are making me nervous
-// !! add 'newGame' or 'startGame' function? that seems to be the best bet
-
 // Functions in this file:
+//
 // getCurrentBoard(board, player) - returns an array of the indices for either 'x' or 'o'
 // setPlayer(currentTurn) - sets player to 'x' or 'o'
 // checkWin(currentBoard) - takes the result of getCurrentBoard, checks it against winning combinations
 //    returns true if match, false if no match
 // countEmpties(board) - takes board and counts how many empty string spaces it has
-
-
+// isWinner(board, player) - determines if there is a draw or a winner and returns true/false
+// playMove(board, moveIndex, player) - updates the board with that player's move,
+//    doesn't do anything if there's already something there. Then runs isWinner
+// ticTacToe(board, moveIndex) - sets the player based on current turn, then runs playMove
+//    and increments the currentTurn
 
 //returns an array of the indices for either 'x' or 'o'
 const getCurrentBoard = function(board, player) {
