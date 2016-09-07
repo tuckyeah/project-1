@@ -19,7 +19,7 @@
   }
 
   @include breakpoint('large') {
-    margin: 0 20%;
+    margin: 20px 20%;
     min-width: 660px;
   }
 }
@@ -46,4 +46,13 @@
     width: 200px;
   }
 
+  p {
+    @include breakpoint('medium') {
+      font-size: 75px;
+    }
+
+    @include breakpoint('large') {
+      font-size: 100px;
+    }
+  }
 }

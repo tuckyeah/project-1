@@ -1,5 +1,6 @@
 'use strict';
 
+let ui = require('./ui');
 // let board = ['','','','','','','','',''];
 let currentTurn = 0;
 
@@ -92,8 +93,9 @@ const checkWin = function(currentBoard) {
   // matches any winningCombo, print 'winner' and return.
   //otherwise, print 'loser :(' and
   for (let i = 0; i < winningCombos.length; i++) {
-    if (String(winningCombos[i]) === String(currentBoard)) {
+    if (String(currentBoard).includes(String(winningCombos[i]))) {
       console.log("Winner!");
+      ui.updateGameStatus("Winner!");
       return true;
     }
   }
@@ -107,7 +109,7 @@ const isWinner = function(board, player) {
   let layout = getCurrentBoard(board, player);
 
   if (countEmpties(board)) {
-    console.log("Draw!");
+    ui.updateGameStatus("It's a draw!");
     return true;
   } else {
     return checkWin(layout);
@@ -121,7 +123,7 @@ const playMove = function(board, moveIndex, player) {
   if (board[moveIndex] === '') {
     board[moveIndex] = player;
   } else {
-    console.log("that spot is taken!");
+    ui.updateGameStatus("That spot is taken!");
     return;
   }
   return isWinner(board, player);
