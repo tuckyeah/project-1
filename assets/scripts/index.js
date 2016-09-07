@@ -6,6 +6,8 @@
 // use require without a reference to ensure a file is bundled
 require('./example');
 
+let gameEvents = require('./game/events.js');
+
 $(document).ready(function() {
-  
+  gameEvents.addHandlers();
 });
