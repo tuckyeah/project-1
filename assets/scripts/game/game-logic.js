@@ -49,9 +49,9 @@ const setPlayer = function(currentTurn) {
   let player;
 
   if (currentTurn % 2 === 0 || currentTurn === 0) {
-    player = 'x';
+    player = 'X';
   } else {
-    player = 'o';
+    player = 'O';
   }
 
   return player;
@@ -74,6 +74,15 @@ const countEmpties = function(board) {
   }
 };
 
+const compareArrays = function(arr, arr2) {
+  // this works if only _some_ of the values match
+  let res = arr.every(function(val) {
+     return arr2.indexOf(val) >= 0;
+  });
+
+  return res;
+};
+
 //checks current indices of 'x' against an array of winning combinations
 // of indices
 const checkWin = function(currentBoard) {
@@ -88,19 +97,22 @@ const checkWin = function(currentBoard) {
     [2, 4, 6]
   ];
 
+  let bool;
 
-  // sort through winningCombos and if the array of indices
-  // matches any winningCombo, print 'winner' and return.
-  //otherwise, print 'loser :(' and
-  for (let i = 0; i < winningCombos.length; i++) {
-    if (String(currentBoard).includes(String(winningCombos[i]))) {
-      console.log("Winner!");
-      ui.updateGameStatus("Winner!");
-      return true;
+  if (currentBoard.length >= 3) {
+    for (let i = 0; i < winningCombos.length; i++) {
+      compareArrays(winningCombos[i], currentBoard);
     }
   }
-  return false;
+
+  // console.log("I'm inside checkWin.");
+  // console.log("The current board is: "+ currentBoard);
+  // console.log("The returned result is: "+bool);
+
+  return bool;
 };
+
+
 
 // checks if there is a draw by running countEmpties
 // otherwise, checks if the current player is a winner, and returns the result of checkWin
@@ -108,11 +120,14 @@ const isWinner = function(board, player) {
 
   let layout = getCurrentBoard(board, player);
 
-  if (countEmpties(board)) {
+  if (checkWin(layout)) {
+    ui.updateGameStatus(player+ " is the winner!");
+    return true;
+  } else if (countEmpties(board)){
     ui.updateGameStatus("It's a draw!");
     return true;
   } else {
-    return checkWin(layout);
+    return false;
   }
 };
 
@@ -155,10 +170,10 @@ const printBoard = function(board) {
 
   // count x's & o's
   board.forEach(function(element, index) {
-    if (element === 'x') {
+    if (element === 'X') {
       xCount++;
       xIndices.push(index);
-    } else if(element === 'o') {
+    } else if(element === 'O') {
       oCount++;
       oIndices.push(index);
     }
