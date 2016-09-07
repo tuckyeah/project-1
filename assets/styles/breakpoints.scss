@@ -2,20 +2,48 @@
 
 .board-wrapper {
   @include breakpoint('tiny') {
+    height: 100%;
     margin: 0;
-    max-width: 100%;
+    width: 100%;
   }
 
   @include breakpoint('small') {
-    margin: 0;
+    margin: 0 25%;
     max-width: 100%;
   }
 
   @include breakpoint('medium') {
-    margin: 0;
+    margin: 0 25%;
+    min-width: 500px;
+    width: auto;
   }
 
   @include breakpoint('large') {
-    margin: 0 35%;
+    margin: 0 20%;
+    min-width: 660px;
   }
+}
+
+.board-line {
+  @include breakpoint('tiny') {
+    padding: 5px 10px;
+  }
+
+  @include breakpoint('small') {
+    padding: 5px 10px;
+  }
+}
+
+
+.game-cell {
+  @include breakpoint('medium') {
+    height: 150px;
+    width: 150px;
+  }
+
+  @include breakpoint('large') {
+    height: 200px;
+    width: 200px;
+  }
+
 }
