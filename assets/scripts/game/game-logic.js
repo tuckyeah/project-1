@@ -16,10 +16,7 @@ let currentTurn = 0;
 // ticTacToe(board, moveIndex) - sets the player based on current turn, then runs playMove
 //    and increments the currentTurn
 
-const testFunction = function() {
-  console.log("I ran!");
-};
-
+//returns an array with all the values in each cell
 const getBoard = function() {
   let totalCells = $('.board-wrapper').find('.game-cell').length;
   let board = [];
@@ -51,7 +48,7 @@ const getCurrentBoard = function(board, player) {
 const setPlayer = function(currentTurn) {
   let player;
 
-  if (currentTurn % 2 !== 0 || currentTurn === 0) {
+  if (currentTurn % 2 === 0 || currentTurn === 0) {
     player = 'x';
   } else {
     player = 'o';
@@ -63,7 +60,6 @@ const setPlayer = function(currentTurn) {
 //checks current indices of 'x' against an array of winning combinations
 // of indices
 const checkWin = function(currentBoard) {
-
   const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
@@ -75,12 +71,13 @@ const checkWin = function(currentBoard) {
     [2, 4, 6]
   ];
 
+
   // sort through winningCombos and if the array of indices
   // matches any winningCombo, print 'winner' and return.
   //otherwise, print 'loser :(' and
   for (let i = 0; i < winningCombos.length; i++) {
     if (String(winningCombos[i]) === String(currentBoard)) {
-      console.log("Winner!");
+      // you've won!
       return true;
     }
   }
@@ -90,17 +87,21 @@ const checkWin = function(currentBoard) {
 // counts number of empty string spaces in the board and returns that number
 const countEmpties = function(board) {
   let emptySpaces = 0;
+
+  // go through the board and, if it hits an empty space, increment emptySpaces
   board.forEach(function(element) {
     if (element === '') {
       emptySpaces++;
     }
   });
+
   return emptySpaces;
 };
 
 // checks if there is a draw by running countEmpties
 // otherwise, checks if the current player is a winner, and returns the result of checkWin
 const isWinner = function(board, player) {
+
   let layout = getCurrentBoard(board, player);
 
   let empties = countEmpties(board);
@@ -134,13 +135,12 @@ const ticTacToe = function(board, moveIndex) {
 
   let player = setPlayer(currentTurn);
 
-  playMove(board, moveIndex, player);
-  currentTurn++;
-
-  //debugging stuff
-  console.log(board);
-  console.log("Current turn: " + currentTurn);
-
+  if (playMove(board, moveIndex, player)) {
+    console.log("Winner!");
+    return;
+  } else {
+    currentTurn++;
+  }
 };
 
 //HELPER FUNCTION FOR DEBUGGING
@@ -179,5 +179,4 @@ module.exports = {
   getCurrentBoard,
   printBoard,
   getBoard,
-  testFunction,
 };

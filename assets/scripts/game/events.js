@@ -1,6 +1,6 @@
 'use strict';
 
-// const ui = require('./ui');
+const ui = require('./ui');
 const game = require('./game-logic');
 
 // we need a function that will update the board
@@ -15,7 +15,7 @@ const onCellClick = (event) => {
   let board = game.getBoard();
 
   game.ticTacToe(board, currentIndex);
-
+  ui.updateBoard(board);
 };
 
 
