@@ -18,9 +18,15 @@ const onCellClick = (event) => {
   ui.updateBoard(board);
 };
 
+const onNewGame = (event) => {
+  event.preventDefault();
+  ui.resetBoard();
+};
+
 
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);
+  $('#new-game').on('click', onNewGame);
 };
 
 module.exports = {

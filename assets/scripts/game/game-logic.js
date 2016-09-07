@@ -114,7 +114,6 @@ const checkWin = function(currentBoard) {
 };
 
 
-
 // checks if there is a draw by running countEmpties
 // otherwise, checks if the current player is a winner, and returns the result of checkWin
 const isWinner = function(board, player) {

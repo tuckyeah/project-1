@@ -12,15 +12,22 @@ const updateGameStatus = function(result) {
 };
 
 const endGame = function() {
-  // $('.board-wrapper').hide();
-  $('.game-cell').css('visibility','hidden');
+  $('.board-wrapper').hide();
+  // $('.game-cell').css('visibility','hidden');
   $('#new-game').show();
 };
 
+const resetBoard = function() {
+  $('#new-game').hide();
+  $('.board-wrapper').show();
+  $('.game-status-banner').html("<h3>Let's play!</h3>");
+  $('.game-cell p').text('');
+};
 // clear board function / start new game
 
 module.exports = {
   updateBoard,
   updateGameStatus,
-  endGame
+  endGame,
+  resetBoard
 };
