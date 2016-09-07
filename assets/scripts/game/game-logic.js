@@ -1,24 +1,41 @@
 'use strict';
 
-const board = ['','','','','','','','',''];
+let board = ['','','','','','','','',''];
+let currentTurn = 0;
 
-const playMove = function(board, moveIndex) {
+// player plays a move
 
-  //updates board with move ('x')
-  board[moveIndex] = 'x';
+//play a move
+const playMove = function(board, moveIndex, currentTurn) {
+  let player;
 
+  //sets 'x' or 'o' based on current turn (x if even)
+  if (currentTurn % 2 !== 0) {
+    player = 'x';
+  } else {
+    player = 'o';
+  }
+
+  //updates board with move player (x or o, based on what ticTacToe says)
+  if (board[moveIndex] === '') {
+    board[moveIndex] = player;
+  } else {
+    console.log("that spot is taken!");
+    // this should do something - like ask the user to make another move
+    // or just do nothing at all
+  }
+
+  isWinner(board, player);
 };
 
-//check board for winners
-
-const getCurrentBoard = function(board) {
+const getCurrentBoard = function(board, player) {
 
   let res = [];
 
   // sort through board and collect the index of each 'x'
   // add that to res
   for (let i = 0; i < board.length; i++) {
-    if (board[i] === 'x') {
+    if (board[i] === player) {
       res.push(i);
     }
   }
@@ -48,14 +65,26 @@ const checkWin = function(currentBoard) {
   for (let i = 0; i < winningCombos.length; i++) {
     if (String(winningCombos[i]) === String(currentBoard)) {
       console.log("Winner!");
-      return;
+      return true;
     }
   }
   console.log("loser :(");
+  return false;
+};
+
+const isWinner = function(board, player) {
+  let layout = getCurrentBoard(board, player);
+  return checkWin(layout);
+};
+
+// this will be our 'game' function that will house pretty much everything else
+
+const ticTacToe = function(board, moveIndex) {
+  playMove(board, moveIndex, currentTurn);
+  currentTurn++;
 };
 
 
 module.export = {
-  playMove,
-  checkWin,
+  ticTacToe
 };
