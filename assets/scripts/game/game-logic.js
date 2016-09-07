@@ -3,31 +3,21 @@
 let board = ['','','','','','','','',''];
 let currentTurn = 0;
 
-// player plays a move
+// TO DO:
+// !! do some more testing & try to break this - it can't be this easy
+// - also these global variables are making me nervous
+// !! add 'newGame' or 'startGame' function? that seems to be the best bet
 
-//play a move
-const playMove = function(board, moveIndex, currentTurn) {
-  let player;
+// Functions in this file:
+// getCurrentBoard(board, player) - returns an array of the indices for either 'x' or 'o'
+// setPlayer(currentTurn) - sets player to 'x' or 'o'
+// checkWin(currentBoard) - takes the result of getCurrentBoard, checks it against winning combinations
+//    returns true if match, false if no match
+// countEmpties(board) - takes board and counts how many empty string spaces it has
 
-  //sets 'x' or 'o' based on current turn (x if even)
-  if (currentTurn % 2 !== 0) {
-    player = 'x';
-  } else {
-    player = 'o';
-  }
 
-  //updates board with move player (x or o, based on what ticTacToe says)
-  if (board[moveIndex] === '') {
-    board[moveIndex] = player;
-  } else {
-    console.log("that spot is taken!");
-    // this should do something - like ask the user to make another move
-    // or just do nothing at all
-  }
 
-  isWinner(board, player);
-};
-
+//returns an array of the indices for either 'x' or 'o'
 const getCurrentBoard = function(board, player) {
 
   let res = [];
@@ -42,6 +32,19 @@ const getCurrentBoard = function(board, player) {
 
   //return array of indices
   return res;
+};
+
+//sets 'x' or 'o' based on current turn (x if even)
+const setPlayer = function(currentTurn) {
+  let player;
+
+  if (currentTurn % 2 !== 0 || currentTurn === 0) {
+    player = 'x';
+  } else {
+    player = 'o';
+  }
+
+  return player;
 };
 
 //checks current indices of 'x' against an array of winning combinations
@@ -68,23 +71,99 @@ const checkWin = function(currentBoard) {
       return true;
     }
   }
-  console.log("loser :(");
   return false;
 };
 
-const isWinner = function(board, player) {
-  let layout = getCurrentBoard(board, player);
-  return checkWin(layout);
+// counts number of empty string spaces in the board and returns that number
+const countEmpties = function(board) {
+  let emptySpaces = 0;
+  board.forEach(function(element) {
+    if (element === '') {
+      emptySpaces++;
+    }
+  });
+  return emptySpaces;
 };
 
-// this will be our 'game' function that will house pretty much everything else
+// checks if there is a draw by running countEmpties
+// otherwise, checks if the current player is a winner, and returns the result of checkWin
+const isWinner = function(board, player) {
+  let layout = getCurrentBoard(board, player);
 
+  let empties = countEmpties(board);
+
+  if (empties === 0) {
+    console.log("Draw!");
+    return true;
+  } else {
+    return checkWin(layout);
+  }
+};
+
+//play a move only if the spot is empty
+const playMove = function(board, moveIndex, player) {
+
+  //updates board with move player (x or o, based on what ticTacToe says)
+  if (board[moveIndex] === '') {
+    board[moveIndex] = player;
+  } else {
+    console.log("that spot is taken!");
+    return;
+  }
+  return isWinner(board, player);
+};
+
+// this will be our 'game' function that serves as the 'engine'
+// as of right now, we have to manually enter the board and the move index
+// since i can't figure out how to do that in node -
+// but once we move to a UI setting it'll be a little better
 const ticTacToe = function(board, moveIndex) {
-  playMove(board, moveIndex, currentTurn);
+
+  let player = setPlayer(currentTurn);
+
+  playMove(board, moveIndex, player);
   currentTurn++;
+
+  //debugging stuff
+  console.log(board);
+  console.log("Current turn: " + currentTurn);
+
+};
+
+//HELPER FUNCTION FOR DEBUGGING
+const printBoard = function(board) {
+  console.log(board);
+
+  let xCount = 0;
+  let xIndices = [];
+  let oCount = 0;
+  let oIndices = [];
+
+  // count x's & o's
+  board.forEach(function(element, index) {
+    if (element === 'x') {
+      xCount++;
+      xIndices.push(index);
+    } else if(element === 'o') {
+      oCount++;
+      oIndices.push(index);
+    }
+  });
+
+  console.log("Number of x's: " + xCount);
+  console.log("X's located at: " + xIndices);
+  console.log("Number of o's: " + oCount);
+  console.log("O's located at: " + oIndices);
 };
 
 
 module.export = {
-  ticTacToe
+  ticTacToe,
+  isWinner,
+  board,
+  playMove,
+  checkWin,
+  setPlayer,
+  getCurrentBoard,
+  printBoard
 };

@@ -18,12 +18,12 @@
   border: 1px solid $red;
   box-sizing: border-box;
   float: left;
-  max-height: 200px;
   margin: 0;
-  text-align: center;
+  max-height: 200px;
   max-width: 200px;
-  min-width: 100px;
   min-height: 100px;
+  min-width: 100px;
+  text-align: center;
 }
 
 .clearfix {
