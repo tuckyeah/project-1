@@ -7,34 +7,61 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-
-      <nav class="navbar">
+<!-- NAVBAR for later -->
+      <!-- <nav class="navbar">
         <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
         <button type="button" class="btn btn-default navbar-btn navbar-right">Sign up</button>
-      </nav>
+      </nav> -->
 
       <h1>Tic Tac Toe</h1>
 
       <div class="container">
-        <div class="board-wrapper">
-          <div class="board-line clearfix">
-              <div class="game-cell">1</div>
-              <div class="game-cell">2</div>
-              <div class="game-cell">3</div>
+        <div class="row" style="margin-bottom: 10px;">
+          <div class="col-xs-6">
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign in!</legend>
+                <input type="email" name="credentials[email]" placeholder="Enter email">
+                <input type="password" name="credentials[password]" placeholder="Enter password">
+                <input type="submit" name="submit" value="Sign in!">
+              </fieldset>
+            </form>
           </div>
-          <div class="board-line clearfix">
-              <div class="game-cell">4</div>
-              <div class="game-cell">5</div>
-              <div class="game-cell">6</div>
-          </div>
-          <div class="board-line clearfix">
-              <div class="game-cell">7</div>
-              <div class="game-cell">8</div>
-              <div class="game-cell">9</div>
+          <div class="col-xs-6">
+            <form id="sign-up">
+              <fieldset>
+                <legend>Sign up!</legend>
+                <input type="email" name="credentials[email]" placeholder="Enter email">
+                <input type="password" name="credentials[password]" placeholder="Enter password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+                <input type="submit" name="submit" value="Sign up!">
+              </fieldset>
+            </form>
           </div>
 
         </div>
-      </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="board-wrapper">
+              <div class="board-line clearfix">
+                  <div class="game-cell">1</div>
+                  <div class="game-cell">2</div>
+                  <div class="game-cell">3</div>
+              </div>
+              <div class="board-line clearfix">
+                  <div class="game-cell">4</div>
+                  <div class="game-cell">5</div>
+                  <div class="game-cell">6</div>
+              </div>
+              <div class="board-line clearfix">
+                  <div class="game-cell">7</div>
+                  <div class="game-cell">8</div>
+                  <div class="game-cell">9</div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
     </body>
 </html>

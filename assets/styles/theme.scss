@@ -1,7 +1,7 @@
 .board-wrapper {
   box-sizing: border-box;
-  margin: auto;
-  width: 645px;
+  margin: 0 35%;
+  width: auto;
 }
 
 .board-line {
@@ -18,10 +18,12 @@
   border: 1px solid $red;
   box-sizing: border-box;
   float: left;
-  height: 200px;
+  max-height: 200px;
   margin: 0;
   text-align: center;
-  width: 200px;
+  max-width: 200px;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .clearfix {
