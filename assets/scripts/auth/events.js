@@ -42,10 +42,9 @@ const onSignOut = function (event) {
 };
 
 
-
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
+  $('#sign-in-modal-button').on('click', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
 };
