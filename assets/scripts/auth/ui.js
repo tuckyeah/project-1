@@ -1,7 +1,6 @@
 'use strict';
 
 let app = require('../app');
-let game = require('../game/game');
 
 const success = (data) => {
   console.log(data);

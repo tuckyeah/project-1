@@ -1,5 +1,22 @@
 'use strict';
 
+// let app = require('../app');
+let game = require('../game/game');
+
+
+const success = (data) => {
+  console.log(data);
+};
+
+const failure = (error) => {
+  console.error(error);
+};
+
+const createGameSuccess = (data) => {
+  game.currentGame = data.game;
+  debugger;
+};
+
 const updateBoard = function(board) {
   board.forEach(function(element, index) {
     $('.game-cell#'+index).html('<p>'+element+'</p>');
@@ -26,8 +43,11 @@ const resetBoard = function() {
 // clear board function / start new game
 
 module.exports = {
+  success,
+  failure,
   updateBoard,
   updateGameStatus,
   endGame,
-  resetBoard
+  resetBoard,
+  createGameSuccess
 };
