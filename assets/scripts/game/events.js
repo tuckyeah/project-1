@@ -1,7 +1,7 @@
 'use strict';
 
 const ui = require('./ui');
-const game = require('./game-logic');
+const logic = require('./game-logic');
 const api = require('./api');
 
 // we need a function that will update the board
@@ -13,9 +13,9 @@ const onCellClick = (event) => {
   let currentIndex = $('.game-cell').index(event.target);
 
   //populate the gameboard
-  let board = game.getBoard();
+  let board = logic.getBoard();
 
-  game.ticTacToe(board, currentIndex);
+  logic.ticTacToe(board, currentIndex);
   ui.updateBoard(board);
 };
 

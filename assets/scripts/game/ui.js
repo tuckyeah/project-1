@@ -14,13 +14,17 @@ const failure = (error) => {
 
 const createGameSuccess = (data) => {
   game.currentGame = data.game;
-  debugger;
+  console.log("New game successfully created.");
+  console.log(game.currentGame);
 };
 
 const updateBoard = function(board) {
-  board.forEach(function(element, index) {
-    $('.game-cell#'+index).html('<p>'+element+'</p>');
+  // update UI board on client side
+  board.forEach(function(token, index) {
+    $('.game-cell#'+index).html('<p>'+token+'</p>');
   });
+
+  //update board on server side
 };
 
 const updateGameStatus = function(result) {
@@ -31,6 +35,7 @@ const updateGameStatus = function(result) {
 const endGame = function() {
   $('.board-wrapper').hide();
   // $('.game-cell').css('visibility','hidden');
+  game.currentGame = null;
   $('#new-game').show();
 };
 
