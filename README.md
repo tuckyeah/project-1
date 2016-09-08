@@ -19,7 +19,7 @@ Making a SPA Tic Tac Toe for GA WDI
   - Create forms for Sign In / Sign up / Change password / log out
   - ~~Create 'X' and 'O' styling for cells~~
   - Add breakpoint styling for new game button and banner header
-  - Beautify
+  - Beautify site
   - Adjust padding around game board/banner to give us some breathing room
 
 - Begin game logic
