@@ -1,7 +1,6 @@
 'use strict';
 
-const game ={
-
+let game = {
 };
 
 module.exports = {
