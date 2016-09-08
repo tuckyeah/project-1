@@ -1,8 +1,15 @@
-.board-wrapper {
-  border: 2px dotted $navy;
+.board-wrapper,
+.intro-text {
+  // border: 2px dotted $navy;
   box-sizing: border-box;
   margin: 0 35%;
   max-width: 660px;
+}
+
+.intro-text {
+  max-height: 660px;
+  min-height: 400px;
+  padding: 10%;
 }
 
 .board-line {

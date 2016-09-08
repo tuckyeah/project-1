@@ -48,9 +48,11 @@ $('#change-password-button').on('click', function() {
 });
 
 $(document).ready(function() {
-  $('#introModal').modal('show');
   $('#change-password-button').hide();
   $('#sign-out').hide();
+  $('#create-game').hide();
+  $('.game-status-banner').hide();
+  $('.board-wrapper').hide();
 
   gameEvents.addHandlers();
   authEvents.addHandlers();

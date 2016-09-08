@@ -17,6 +17,10 @@ const signInSuccess = (data) => {
   $('#sign-up-button').hide();
   $('#change-password-button').show();
   $('#sign-out').show();
+  $('#create-game').show();
+  $('.intro-text').hide();
+  $('.game-status-banner').show();
+  $('.board-wrapper').show();
   gameEvents.onCreateGame();
 };
 
@@ -27,10 +31,14 @@ const changePasswordSuccess = () => {
 const signOutSuccess = () => {
   app.user = null;
   console.log('User signed out successfully.');
+  $('#sign-out').hide();
+  $('#create-game').hide();
+  $('#change-password-button').hide();
+  $('.game-status-banner').hide();
+  $('.board-wrapper').hide();
+  $('.intro-text').show();
   $('#sign-in-button').show();
   $('#sign-up-button').show();
-  $('#sign-out').hide();
-  $('#change-password-button').hide();
 };
 
 module.exports = {
