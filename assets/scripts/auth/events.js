@@ -48,7 +48,7 @@ const testFunction = function (event) {
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
-  $('#sign-in-modal-button').on('click', onSignIn);
+  // $('#sign-in-modal-button').on('click', onSignIn);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
