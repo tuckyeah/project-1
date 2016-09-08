@@ -19,8 +19,8 @@ Making a SPA Tic Tac Toe for GA WDI
   - Create forms for Sign In / Sign up / Change password / log out
   - ~~Create 'X' and 'O' styling for cells~~
   - Add breakpoint styling for new game button and banner header
-  - Beautify site
   - Adjust padding around game board/banner to give us some breathing room
+  - Add a seperate div for game winning message / button
 
 - Begin game logic
   - ~~Click on a cell / select a cell~~
@@ -41,3 +41,7 @@ Making a SPA Tic Tac Toe for GA WDI
 - Revisit HTML/css
   - separate concerns, add semantic labeling
     - Break current styling into 'grid spacing' and make a directory for themes, add current coloring to themes
+
+  - add modals where necessary
+  - Update status banner every round
+  - Add 'reset game' button to the toolbar

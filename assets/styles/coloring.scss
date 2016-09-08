@@ -11,6 +11,7 @@ body {
 
   &:hover {
     background-color: darken($powder-blue, 5%);
+    color: $white;
     cursor: pointer;
   }
 

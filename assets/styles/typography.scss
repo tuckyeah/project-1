@@ -1,10 +1,14 @@
 @import 'colors';
 @import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
 @import url('https://fonts.googleapis.com/css?family=Farsan');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Bungee');
 
 // font variables
 $baloo: 'Baloo Paaji', cursive;
 $farsan: 'Farsan', sans-serif;
+$bungee-fancy: 'Bungee Shade', cursive;
+$bungee-plain: 'Bungee', cursive;
 
 // mixins
 @mixin text-shadow($opacity) {
@@ -16,19 +20,23 @@ $farsan: 'Farsan', sans-serif;
 .game-cell {
   // x's and o's
   p {
-    font-family: $baloo;
+    font-family: $bungee-fancy;
   }
 }
 
-h1,
 h2,
 h3 {
   // title and subhead
-  font-family: $farsan;
+  font-family: $bungee-plain;
+}
+
+h2 {
+  font-size: 45px;
 }
 
 h1 {
   // title only
+  font-family: $bungee-fancy;
   font-size: 4em;
   font-weight: 900;
   letter-spacing: .2em;
