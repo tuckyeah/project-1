@@ -1,7 +1,6 @@
 'use strict';
 
 let ui = require('./ui');
-// let board = ['','','','','','','','',''];
 let game = require('./game');
 
 let currentGame = game.currentGame;
@@ -136,7 +135,6 @@ const playMove = function(board, moveIndex, player) {
 
 // this will be our 'game' function that serves as the 'engine'
 const ticTacToe = function(board, moveIndex) {
-  debugger;
 
   let player = setPlayer(currentGame.currentTurn);
 

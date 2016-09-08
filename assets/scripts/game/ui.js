@@ -3,7 +3,7 @@
 // let app = require('../app');
 let game = require('../game/game');
 
-
+//generic success/failure functions
 const success = (data) => {
   console.log(data);
 };
@@ -12,6 +12,9 @@ const failure = (error) => {
   console.error(error);
 };
 
+// on a successful creation of a new game
+// set currentGame property of game object to the game from the server
+// and just log some information for debugging
 const createGameSuccess = (data) => {
   game.currentGame = data.game;
   console.log("New game successfully created.");
