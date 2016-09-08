@@ -33,10 +33,15 @@ Making a SPA Tic Tac Toe for GA WDI
   - Confirm clcking twice will error out / lost turn
 
 - Begin Server Authentication
-  - Add new user
-  - Sign in
-  - Sign out
-  - Change password
+  - ~~Add new user~~
+  - ~~Sign in~~
+  - ~~Sign out~~
+  - ~~Change password~~
+  - Link game to user
+  - Retrieve all user's games from server
+  - Create new game from server
+  - show specific game?
+  - update game status with each move
 
 - Revisit HTML/css
   - separate concerns, add semantic labeling
