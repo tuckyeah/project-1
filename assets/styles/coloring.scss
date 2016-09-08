@@ -1,23 +1,33 @@
-@import 'typography';
+// ciba theme:
+  // $text-color: $cranberry;
+  // $page-color: $light-blue;
+  // $cell-color: $powder-blue;
+
+// digitas theme
+$text-color: $lime-green;
+$page-color: $steel-gray;
+$cell-color: $steel-gray;
+
+
 
 body {
-  background-color: $light-blue;
-  color: $cranberry;
+  background-color: $page-color;
+  color: $text-color;
 }
 
 .game-cell {
-  background-color: $powder-blue;
-  border: 5px solid $cranberry;
+  background-color: $cell-color;
+  border: 5px solid $text-color;
 
   &:hover {
-    background-color: darken($powder-blue, 5%);
+    background-color: darken($cell-color, 5%);
     color: $white;
     cursor: pointer;
   }
 
   p {
     @include text-shadow(.8);
-    color: $cranberry;
+    color: $text-color;
 
     &:hover {
       color: $white;
