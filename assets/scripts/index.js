@@ -32,12 +32,6 @@ $('#sign-up-submit').on('click', function(){
   $('#signUpModal').modal('hide');
 });
 
-$('#sign-up-sign-in').on('click', function() {
-  $('#signUpModal').modal('hide', function(){
-    $('#signInModal').show();
-  });
-});
-
 // CHANGE PASSWORD
 $('#change-password-button').on('click', function() {
   $('#changePassModal').modal('show');
@@ -48,12 +42,12 @@ $('#change-password-button').on('click', function() {
 });
 
 $(document).ready(function() {
-  $('#change-password-button').hide();
-  $('#sign-out').hide();
-  $('#create-game').hide();
-  $('.game-status-banner').hide();
-  $('.board-wrapper').hide();
-
   gameEvents.addHandlers();
   authEvents.addHandlers();
+
+  $('#change-password-button').hide();
+  $('#sign-out').hide();
+  $('.create-game').hide();
+  $('.game-status-banner').hide();
+  $('.board-wrapper').hide();
 });

@@ -37,8 +37,7 @@ const onCreateGame = () => {
 
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);
-  // $('#new-game').on('click', onCreateGame);
-  $('#create-game').on('click', onCreateGame);
+  $('.create-game').on('click', onCreateGame);
 };
 
 module.exports = {

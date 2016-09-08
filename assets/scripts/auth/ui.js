@@ -11,13 +11,17 @@ const failure = (error) => {
   console.log(error);
 };
 
+const signUpSuccess = (data) => {
+  console.log(data);
+};
+
 const signInSuccess = (data) => {
   app.user = data.user;
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
   $('#change-password-button').show();
   $('#sign-out').show();
-  $('#create-game').show();
+  $('.create-game').show();
   $('.intro-text').hide();
   $('.game-status-banner').show();
   $('.board-wrapper').show();
@@ -32,7 +36,7 @@ const signOutSuccess = () => {
   app.user = null;
   console.log('User signed out successfully.');
   $('#sign-out').hide();
-  $('#create-game').hide();
+  $('.create-game').hide();
   $('#change-password-button').hide();
   $('.game-status-banner').hide();
   $('.board-wrapper').hide();
@@ -46,5 +50,6 @@ module.exports = {
   failure,
   signInSuccess,
   changePasswordSuccess,
-  signOutSuccess
+  signOutSuccess,
+  signUpSuccess
 };
