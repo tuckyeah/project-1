@@ -7,8 +7,10 @@
 require('./example');
 
 let gameEvents = require('./game/events.js');
+let authEvents = require('./auth/events.js');
 
 $(document).ready(function() {
   $('#new-game').hide();
   gameEvents.addHandlers();
+  authEvents.addHandlers();
 });

@@ -8,26 +8,16 @@
     </head>
     <body class="container-fluid">
 <!-- NAVBAR for later -->
-      <nav class="navbar">
-        <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+      <!-- <nav class="navbar"> -->
+        <!-- <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
         <button type="button" class="btn btn-default navbar-btn navbar-right">Sign up</button>
-      </nav>
+      </nav> -->
 
       <h1>Tic Tuck Toe</h1>
 
       <div class="container">
-        <!-- <div class="row" style="margin-bottom: 10px;">
-          <div class="col-xs-6">
-            <form id="sign-in">
-              <fieldset>
-                <legend>Sign in!</legend>
-                <input type="email" name="credentials[email]" placeholder="Enter email">
-                <input type="password" name="credentials[password]" placeholder="Enter password">
-                <input type="submit" name="submit" value="Sign in!">
-              </fieldset>
-            </form>
-          </div>
-          <div class="col-xs-6">
+        <div class="row" style="margin-bottom: 10px;">
+          <div class="col-xs-3">
             <form id="sign-up">
               <fieldset>
                 <legend>Sign up!</legend>
@@ -38,7 +28,37 @@
               </fieldset>
             </form>
           </div>
-        </div> -->
+
+          <div class="col-xs-3">
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign in!</legend>
+                <input type="email" name="credentials[email]" placeholder="Enter email">
+                <input type="password" name="credentials[password]" placeholder="Enter password">
+                <input type="submit" name="submit" value="Sign in!">
+              </fieldset>
+            </form>
+          </div>
+
+          <div class="col-xs-3">
+            <form id="change-password">
+              <fieldset>
+                <legend>Change password!</legend>
+                  <input type="password" name="passwords[old]" placeholder="Old password">
+                  <input type="password" name="passwords[new]" placeholder="New password">
+                  <input type="submit" name="submit" value="Change password!">
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-xs-3">
+            <form id="sign-out">
+              <fieldset>
+                <legend>Sign out!</legend>
+                <input type="submit" name="submit" value="Sign out!">
+              </fieldset>
+            </form>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-xs-12">
