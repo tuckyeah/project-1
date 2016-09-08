@@ -16,20 +16,20 @@ Making a SPA Tic Tac Toe for GA WDI
 
 - Rough HTML/CSS
   - ~~Create grid and prevent it from breaking on different window sizes~~
-  - Create forms for Sign In / Sign up / Change password / log out
+  - ~~Create forms for Sign In / Sign up / Change password / log out~~
   - ~~Create 'X' and 'O' styling for cells~~
-  - Add breakpoint styling for new game button and banner header
+  - ~~Add breakpoint styling for new game button and banner header~~
   - Adjust padding around game board/banner to give us some breathing room
-  - Add a seperate div for game winning message / button
+  - ~~Add a seperate div for game winning message / button~~
 
 - Begin game logic
   - ~~Click on a cell / select a cell~~
   - ~~Display HTML in cell ('x' or 'o')~~
-  - Validate move against server
+  - ~~Validate move against server~~
   - ~~Win game~~
   - ~~Draw game~~
   - ~~Restart game~~
-  - Confirm game resets after multiple rounds
+  - ~~Confirm game resets after multiple rounds~~
   - Confirm clcking twice will error out / lost turn
 
 - Begin Server Authentication
@@ -49,7 +49,11 @@ Making a SPA Tic Tac Toe for GA WDI
 
   - add modals where necessary
   - Update status banner every round
-  - Add 'reset game' button to the toolbar
-  - Prompt 'sign in/sign up' on page load
+  - ~~Add 'reset game' button to the toolbar~~
+  - ~~Prompt 'sign in/sign up' on page load~~
   - ~~Tie new game to sign in~~
-  - Add 'wrong password' prompt
+  - ~~Add 'wrong password' prompt~~
+  - Add user/game info button
+  - Prettify
+  - Check for mobile friendly use
+  - !!!Make sure the move displays before the ending game message appears!!!

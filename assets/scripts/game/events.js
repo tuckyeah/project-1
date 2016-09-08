@@ -16,15 +16,14 @@ const onCellClick = (event) => {
   let player = gameLogic.setPlayer();
 
   if (gameLogic.playMove(currentIndex, player)) {
-    if (game.currentGame.over) {
-      ui.endGame(player);
-    } else {
       api.updateGame(currentIndex, player)
         .done(ui.updateGameSuccess)
         .fail(ui.failure);
-    }
   } else {
     console.log("onCellClick error!");
+  }
+  if (game.currentGame.over) {
+    ui.endGame(player);
   }
 };
 

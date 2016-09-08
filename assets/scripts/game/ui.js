@@ -59,9 +59,10 @@ const updateGameSuccess = function() {
 
 
 const endGame = function() {
-  $('.board-wrapper').hide();
   updateGameStatus();
-  $('.winner').fadeIn('slow');
+  $('.board-wrapper').fadeOut('slow', function() {
+      $('.winner').fadeIn('slow');
+  });
   game.currentGame = null;
   game.game.currentTurn = 0;
 };
