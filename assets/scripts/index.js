@@ -13,7 +13,8 @@ let authEvents = require('./auth/events.js');
 
 // SIGN IN
 $('#sign-in-button').on('click', function() {
-  $('#signInModal').modal('show');
+  $('#introModal').modal('hide');
+    $('#signInModal').modal('show');
 });
 
   // i'll need to adjust this for bad passwords
@@ -23,14 +24,21 @@ $('#sign-in-submit').on('click', function(){
 
 // SIGN UP
 $('#sign-up-button').on('click', function() {
-  $('#signUpModal').modal('show');
+  $('#introModal').modal('hide');
+    $('#signUpModal').modal('show');
 });
 
 $('#sign-up-submit').on('click', function(){
   $('#signUpModal').modal('hide');
 });
 
-// CHANGE PASSOWRD
+$('#sign-up-sign-in').on('click', function() {
+  $('#signUpModal').modal('hide', function(){
+    $('#signInModal').show();
+  });
+});
+
+// CHANGE PASSWORD
 $('#change-password-button').on('click', function() {
   $('#changePassModal').modal('show');
 });
@@ -40,9 +48,9 @@ $('#change-password-button').on('click', function() {
 });
 
 $(document).ready(function() {
-  $('#new-game').hide();
+  $('#introModal').modal('show');
   $('#change-password-button').hide();
-  $('#sign-out-button').hide();
+  $('#sign-out').hide();
 
   gameEvents.addHandlers();
   authEvents.addHandlers();

@@ -9,58 +9,15 @@
     <body class="container-fluid">
 <!-- NAVBAR for later -->
       <nav class="navbar">
-        <button type="button" id="sign-up-button" class="btn btn-default navbar-btn navbar-right">Sign up</button>
-        <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+        <!-- <button type="button" id="sign-up-button" class="btn btn-default navbar-btn navbar-right">Sign up</button>
+        <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right">Sign in</button> -->
         <button type="button" id="change-password-button" class="btn btn-default navbar-btn navbar-right">Change password</button>
-        <button type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+        <button type="button" id="sign-out" class="btn btn-default navbar-btn navbar-right">Sign out</button>
       </nav>
 
       <h1>Tic Tuck Toe</h1>
 
       <div class="container">
-        <!-- <div class="row" style="margin-bottom: 10px;">
-          <div class="col-xs-3"> -->
-            <!-- <form id="sign-up">
-              <fieldset>
-                <legend>Sign up!</legend>
-                <input type="email" name="credentials[email]" placeholder="Enter email">
-                <input type="password" name="credentials[password]" placeholder="Enter password">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
-                <input type="submit" name="submit" value="Sign up!">
-              </fieldset>
-            </form>
-          </div> -->
-
-          <!-- <div class="col-xs-3">
-            <form id="sign-in-alt">
-              <fieldset>
-                <legend>Sign in!</legend>
-                <input type="email" name="credentials[email]" placeholder="Enter email">
-                <input type="password" name="credentials[password]" placeholder="Enter password">
-                <input type="submit" name="submit" value="Sign in!">
-              </fieldset>
-            </form>
-          </div> -->
-<!--
-          <div class="col-xs-3">
-            <form id="change-password">
-              <fieldset>
-                <legend>Change password!</legend>
-                  <input type="password" name="passwords[old]" placeholder="Old password">
-                  <input type="password" name="passwords[new]" placeholder="New password">
-                  <input type="submit" name="submit" value="Change password!">
-              </fieldset>
-            </form>
-          </div> -->
-          <!-- <div class="col-xs-3">
-            <form id="sign-out">
-              <fieldset>
-                <legend>Sign out!</legend>
-                <input type="submit" name="submit" value="Sign out!">
-              </fieldset>
-            </form>
-          </div>
-        </div> -->
 
         <div class="row">
           <div class="col-xs-12">
@@ -98,7 +55,6 @@
           </div>
         </div>
     </div>
-  </div>
 
   <!-- MODAL SECTION  -->
       <!-- Sign In Modal -->
@@ -166,7 +122,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <input type="submit" class="btn btn-primary right-float" id="sign-up-submit">
+                    <input type="submit" class="btn btn-success right-float" id="sign-up-submit" value="Sign up!">
                   </div>
                 </div>
               </form>
@@ -208,6 +164,24 @@
         </div>
       </div>
 
+      <!-- Intro Modal -->
+      <!-- <div class="modal fade" id="introModal" data-backdrop="static" data-show="true" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title intro-title">Welcome to Tic Tuck Toe!</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xs-12">
+                  <button type="button" id="sign-up-button" class="btn btn-primary btn-lg">Sign up</button>
+                  <button type="button" id="sign-in-button" class="btn btn-success btn-lg">Sign in</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
     </body>
 </html>

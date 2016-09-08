@@ -51,7 +51,7 @@ const getPlayerMoves = function(player) {
 };
 
 //compare two arrays, and return true if every value of the second array
-// is contained within the first
+// is contained within the first.
 const compareArrays = function(winningCombo, playerMoves) {
 
   let res = winningCombo.every(function(val) {
@@ -74,7 +74,7 @@ const isWinner = function(player) {
       }
     }
   }
-  // I don't know if I need this
+  // I don't know if I need this statement:
   // return false;
 };
 

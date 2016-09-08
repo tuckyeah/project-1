@@ -13,9 +13,9 @@ const failure = (error) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  $('#sign-in').hide();
-  $('#sign-up').hide();
-  $('#change-password').show();
+  $('#sign-in-button').hide();
+  $('#sign-up-button').hide();
+  $('#change-password-button').show();
   $('#sign-out').show();
   gameEvents.onCreateGame();
 };
@@ -27,10 +27,10 @@ const changePasswordSuccess = () => {
 const signOutSuccess = () => {
   app.user = null;
   console.log('User signed out successfully.');
-  $('#sign-in').show();
-  $('#sign-up').show();
+  $('#sign-in-button').show();
+  $('#sign-up-button').show();
   $('#sign-out').hide();
-  $('#change-password').hide();
+  $('#change-password-button').hide();
 };
 
 module.exports = {
