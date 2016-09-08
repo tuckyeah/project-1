@@ -10,7 +10,7 @@ const gameLogic = require('./logic');
 const onCellClick = (event) => {
   event.preventDefault();
 
-  // get the index of the current cell
+  // get the index of the clicked cell
   let currentIndex = $('.game-cell').index(event.target);
   let player = gameLogic.setPlayer();
 
@@ -22,13 +22,6 @@ const onCellClick = (event) => {
   } else {
     console.log("onCellClick error!");
   }
-
-
-  // //populate the gameboard
-  // let board = logic.getBoard();
-  //
-  // logic.ticTacToe(board, currentIndex);
-  // ui.updateBoard(board);
 };
 
 const onNewGame = (event) => {

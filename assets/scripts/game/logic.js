@@ -1,6 +1,5 @@
 'use strict';
 
-// let ui = require('./ui');
 let game = require('./game');
 
 // set game.player based on current turn - if 0 or even, 'x', odds 'o'
@@ -38,30 +37,104 @@ const incrementTurn = function() {
   game.game.currentTurn++;
   console.log(game.game.currentTurn);
 };
+// returns an array of the player's locations
+const getPlayerMoves = function(player) {
+  let board = game.currentGame.cells;
+  let res = [];
+
+  for (let i = 0; i < board.length; i++) {
+    if (board[i] === player) {
+      res.push(i);
+    }
+  }
+  return res;
+};
+
+//compare two arrays, and return true if every value of the second array
+// is contained within the first
+const compareArrays = function(winningCombo, playerMoves) {
+
+  let res = winningCombo.every(function(val) {
+     return playerMoves.indexOf(val) >= 0;
+  });
+
+  return res;
+};
+
+// returns true if the player has succeeded in making a
+// winning move.
+const isWinner = function(player) {
+  let winners = game.game.winningCombos;
+  let playerMoves = getPlayerMoves(player);
+
+  if (playerMoves.length >= 3)  {
+    for (let i=0; i < winners.length; i++) {
+      if(compareArrays(winners[i], playerMoves)) {
+        return true;
+      }
+    }
+  }
+  // I don't know if I need this
+  // return false;
+};
+
+// returns true if there are no empty spaces on the board
+const isDraw = function() {
+  let emptySpaces = true;
+  let board = game.currentGame.cells;
+
+  board.forEach(function(element) {
+    if (element === '') {
+      emptySpaces = false;
+    }
+  });
+
+  return emptySpaces;
+};
+
+// sets the currentGame.over property to true if it works
+const isGameOver = function(player) {
+  if(isWinner(player)) {
+    game.currentGame.over = true;
+  } else if (isDraw()) {
+    console.log("It's a draw!");
+    game.currentGame.over = true;
+  } else {
+    return false;
+  }
+};
 
 // calls validate move, and if it's a valid move, updates the board
 // in memory and increments turn
 const playMove = function(index, player) {
 
-  if (validateMove(index)) {
-    let currentGameBoard = game.currentGame.cells;
+    if (validateMove(index)) {
+      let currentGameBoard = game.currentGame.cells;
+      currentGameBoard[index] = player; // updates board in memory with user move
+      incrementTurn();     // increment turn
+      isGameOver(player);
+      return true;
+    } else {
+      console.log("play move Error!");
+      return false;
+    }
 
-    // sets currentGame board to show the move by the player
-    currentGameBoard[index] = player;
-
-    //set store index in game object
-
-    // increment turn
-    incrementTurn();
-
-    return true;
-
-  } else {
-    console.log("play move Error!");
-    return false;
-  }
-  // check for winner or draw
 };
+
+// successful turn function
+
+const takeATurn = function(index, player) {
+
+  if(game.currentGame.over) {
+    console.log("Game over!");
+    return false;
+  } else {
+    playMove(index, player);
+    return true;
+  }
+};
+
+
 
 
 
@@ -76,5 +149,6 @@ module.exports = {
   validateMove,
   setPlayer,
   playMove,
-  incrementTurn
+  incrementTurn,
+  getPlayerMoves
 };

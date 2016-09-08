@@ -30,8 +30,8 @@ const displayMoves = function() {
   });
 };
 
-const updateGameSuccess = function(data) {
-  console.log(data);
+const updateGameSuccess = function() {
+  console.log(game);
   displayMoves();
 };
 

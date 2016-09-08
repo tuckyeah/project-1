@@ -23,8 +23,8 @@ const updateGame = (index, val) => {
     data: {
       "game": {
         "cell": {
-          "index": 0,
-          "value": "x"
+          "index": index,
+          "value": val
         },
         "over": false
       }
