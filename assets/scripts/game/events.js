@@ -12,8 +12,14 @@ const onCellClick = (event) => {
 
   // get the index of the current cell
   let currentIndex = $('.game-cell').index(event.target);
+  let player = gameLogic.setPlayer();
 
-  gameLogic.setPlayer();
+
+  if (gameLogic.validateMove(currentIndex)) {
+    gameLogic.playMove(currentIndex, player);
+  } else {
+    console.log("error!");
+  }
 
 
   // //populate the gameboard
@@ -39,7 +45,7 @@ const onCreateGame = (event) => {
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);
   $('#new-game').on('click', onNewGame);
-  $('.game-status-banner').on('click', onCreateGame);
+  $('#create-game').on('click', onCreateGame);
 };
 
 module.exports = {

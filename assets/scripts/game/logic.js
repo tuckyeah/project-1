@@ -1,11 +1,11 @@
 'use strict';
 
-let ui = require('./ui');
+// let ui = require('./ui');
 let game = require('./game');
 
 // set game.player based on current turn - if 0 or even, 'x', odds 'o'
 const setPlayer = function() {
-  let player = game.game.player;
+  let player;
   let currentTurn = game.game.currentTurn;
 
   if (currentTurn % 2 === 0 || currentTurn === 0) {
@@ -13,7 +13,7 @@ const setPlayer = function() {
   } else {
     player = 'O';
   }
-  console.log(player);
+  return player;
 };
 
 //validates that the move goes into an empty space
@@ -33,6 +33,24 @@ const validateMove = function(index) {
   }
 };
 
+const incrementTurn = function() {
+  game.game.currentTurn++;
+  console.log(game.game.currentTurn);
+};
+
+
+const playMove = function(index, player) {
+  let currentGameBoard = game.currentGame.cells;
+  // sets currentGame board to show the move by the player
+  currentGameBoard[index] = player;
+
+  // increment turn
+  incrementTurn();
+
+  debugger;
+
+};
+
 //used for debugging
 const returnCurrentGame = function() {
   console.log(game.currentGame);
@@ -42,5 +60,7 @@ const returnCurrentGame = function() {
 module.exports = {
   returnCurrentGame,
   validateMove,
-  setPlayer
+  setPlayer,
+  playMove,
+  incrementTurn
 };
