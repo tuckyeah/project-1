@@ -18,13 +18,14 @@ const failure = (error) => {
 const createGameSuccess = (data) => {
   game.currentGame = data.game;
   game.game.currentTurn = 0;
+  game.game.endGameStatus = null;
+  updateGameStatus();
   $('#new-game').hide();
   $('.board-wrapper').show();
   $('.game-cell p').text('');
   console.log("New game successfully created.");
   console.log(game.currentGame);
   console.log(game);
-  debugger;
 };
 
 const displayMoves = function() {
@@ -41,18 +42,29 @@ const updateGameSuccess = function() {
   displayMoves();
 };
 
-const updateGameStatus = function(result) {
-  $('.game-status-banner').html('');
-  $('.game-status-banner').html('<h2>'+result+'</h2>');
+const updateGameStatus = function() {
+  let status = game.game.endGameStatus;
+  let result;
+
+  if (status === "draw") {
+    result = "It's a draw!";
+  } else if (status === null) {
+    console.log("I ran");
+    result = "Let's play!";
+  } else {
+    result = status + " is the winner!";
+  }
+
+  $('.game-status-banner h3').text('');
+  $('.game-status-banner h3').text(result);
 };
 
-const endGame = function() {
+const endGame = function(player) {
   $('.board-wrapper').hide();
-  // $('.game-cell').css('visibility','hidden');
   game.currentGame = null;
   game.game.currentTurn = 0;
-  $('#new-game').show();
-  debugger;
+
+  updateGameStatus();
 };
 
 const resetBoard = function() {

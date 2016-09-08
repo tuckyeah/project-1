@@ -1,7 +1,7 @@
 'use strict';
 
 let game = {
-  movesPlayed: 0,
+  endGameStatus: null,
   currentTurn: 0,
   currentIndex: 0,
   winningCombos: [

@@ -95,11 +95,11 @@ const isDraw = function() {
 // sets the currentGame.over property to true if it works
 const isGameOver = function(player) {
   if(isWinner(player)) {
-    console.log("Winner!");
+    game.game.endGameStatus = player;
     game.currentGame.over = true;
     return true;
   } else if (isDraw()) {
-    console.log("It's a draw!");
+    game.game.endGameStatus = 'draw';
     game.currentGame.over = true;
     return true;
   } else {

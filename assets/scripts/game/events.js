@@ -17,7 +17,7 @@ const onCellClick = (event) => {
 
   if (gameLogic.playMove(currentIndex, player)) {
     if (game.currentGame.over) {
-      ui.endGame();
+      ui.endGame(player);
     } else {
       api.updateGame(currentIndex, player)
         .done(ui.updateGameSuccess)
@@ -28,11 +28,6 @@ const onCellClick = (event) => {
   }
 };
 
-const onNewGame = (event) => {
-  event.preventDefault();
-  ui.resetBoard();
-};
-
 const onCreateGame = (event) => {
   event.preventDefault();
   api.createGame()
@@ -40,10 +35,9 @@ const onCreateGame = (event) => {
     .fail(ui.failure);
 };
 
-
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);
-  $('#new-game').on('click', onCreateGame);
+  // $('#new-game').on('click', onCreateGame);
   $('#create-game').on('click', onCreateGame);
 };
 
