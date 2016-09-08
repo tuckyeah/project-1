@@ -2,3 +2,20 @@ $black: #000;
 $white: #fff;
 $blue: #00f;
 $red: #f00;
+
+$cranberry: #591948;
+$powder-blue: #78aaef;
+$light-blue: #abd3f6;
+$navy: #161d25;
+$cream: #fdfef0;
+
+// gives a transparent white
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity)
+};
+
+
+// gives a transparent black
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity)
+};

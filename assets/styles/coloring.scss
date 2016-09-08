@@ -1,0 +1,16 @@
+@import 'typography';
+
+body {
+  background-color: $light-blue;
+  color: $cranberry;
+}
+
+.game-cell {
+  background-color: $powder-blue;
+  border: 5px solid $cranberry;
+
+  p {
+    @include text-shadow(.8);
+    color: $cranberry;
+  }
+}

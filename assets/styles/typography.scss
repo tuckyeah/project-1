@@ -1,0 +1,29 @@
+@import 'colors';
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
+@import url('https://fonts.googleapis.com/css?family=Farsan');
+
+// font variables
+$baloo: 'Baloo Paaji', cursive;
+$farsan: 'Farsan', sans-serif;
+
+@mixin text-shadow($opacity) {
+  text-shadow: black($opacity) 0 1px 0;
+}
+
+
+.gamecell {
+  p {
+    font-family: $baloo;
+  }
+}
+
+h1,
+h3 {
+  font-family: $farsan;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 900;
+  letter-spacing: .2em;
+};
