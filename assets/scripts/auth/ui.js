@@ -1,6 +1,7 @@
 'use strict';
 
 let app = require('../app');
+let game = require('../game/game');
 
 const success = (data) => {
   console.log(data);
@@ -12,7 +13,6 @@ const failure = (error) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log(data);
   $('#sign-in').hide();
   $('#sign-up').hide();
   $('#change-password').show();

@@ -1,7 +1,8 @@
 'use strict';
 
-const game ={
+let app = require('../app');
 
+let game = {
 };
 
 module.exports = {
