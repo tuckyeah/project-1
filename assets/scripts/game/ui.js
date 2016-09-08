@@ -17,8 +17,14 @@ const failure = (error) => {
 // and just log some information for debugging
 const createGameSuccess = (data) => {
   game.currentGame = data.game;
+  game.game.currentTurn = 0;
+  $('#new-game').hide();
+  $('.board-wrapper').show();
+  $('.game-cell p').text('');
   console.log("New game successfully created.");
   console.log(game.currentGame);
+  console.log(game);
+  debugger;
 };
 
 const displayMoves = function() {
@@ -44,7 +50,9 @@ const endGame = function() {
   $('.board-wrapper').hide();
   // $('.game-cell').css('visibility','hidden');
   game.currentGame = null;
+  game.game.currentTurn = 0;
   $('#new-game').show();
+  debugger;
 };
 
 const resetBoard = function() {

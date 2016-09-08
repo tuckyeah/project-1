@@ -95,10 +95,13 @@ const isDraw = function() {
 // sets the currentGame.over property to true if it works
 const isGameOver = function(player) {
   if(isWinner(player)) {
+    console.log("Winner!");
     game.currentGame.over = true;
+    return true;
   } else if (isDraw()) {
     console.log("It's a draw!");
     game.currentGame.over = true;
+    return true;
   } else {
     return false;
   }
@@ -121,20 +124,6 @@ const playMove = function(index, player) {
 
 };
 
-// successful turn function
-
-const takeATurn = function(index, player) {
-
-  if(game.currentGame.over) {
-    console.log("Game over!");
-    return false;
-  } else {
-    playMove(index, player);
-    return true;
-  }
-};
-
-
 
 
 
@@ -150,5 +139,6 @@ module.exports = {
   setPlayer,
   playMove,
   incrementTurn,
-  getPlayerMoves
+  getPlayerMoves,
+  isGameOver
 };
