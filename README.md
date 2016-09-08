@@ -29,6 +29,8 @@ Making a SPA Tic Tac Toe for GA WDI
   - ~~Win game~~
   - ~~Draw game~~
   - ~~Restart game~~
+  - Confirm game resets after multiple rounds
+  - Confirm clcking twice will error out / lost turn
 
 - Begin Server Authentication
   - Add new user
