@@ -1,23 +1,11 @@
 'use strict';
 
 let ui = require('./ui');
-// let board = ['','','','','','','','',''];
-let currentTurn = 0;
+let game = require('./game');
 
-// Functions in this file:
-//
-// getCurrentBoard(board, player) - returns an array of the indices for either 'x' or 'o'
-// setPlayer(currentTurn) - sets player to 'x' or 'o'
-// checkWin(currentBoard) - takes the result of getCurrentBoard, checks it against winning combinations
-//    returns true if match, false if no match
-// countEmpties(board) - takes board and counts how many empty string spaces it has
-// isWinner(board, player) - determines if there is a draw or a winner and returns true/false
-// playMove(board, moveIndex, player) - updates the board with that player's move,
-//    doesn't do anything if there's already something there. Then runs isWinner
-// ticTacToe(board, moveIndex) - sets the player based on current turn, then runs playMove
-//    and increments the currentTurn
+let currentGame = game.currentGame;
 
-//returns an array with all the values in each cell
+// returns an array with all the values in each cell
 const getBoard = function() {
   let totalCells = $('.board-wrapper').find('.game-cell').length;
   let board = [];
@@ -148,19 +136,18 @@ const playMove = function(board, moveIndex, player) {
 // this will be our 'game' function that serves as the 'engine'
 const ticTacToe = function(board, moveIndex) {
 
-  let player = setPlayer(currentTurn);
+  let player = setPlayer(currentGame.currentTurn);
 
   // if someone won, return true!
   if (playMove(board, moveIndex, player)) {
     ui.endGame();
-    currentTurn = 0;
     return;
   } else {
   // otherwise, increment currentTurn
-    currentTurn++;
+    currentGame.currentTurn++;
   }
 
-  console.log(currentTurn);
+  console.log(currentGame.currentTurn);
 };
 
 //HELPER FUNCTION FOR DEBUGGING
@@ -198,5 +185,5 @@ module.exports = {
   setPlayer,
   getCurrentBoard,
   printBoard,
-  getBoard,
+  getBoard
 };

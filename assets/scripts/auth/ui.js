@@ -12,7 +12,6 @@ const failure = (error) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log(data);
   $('#sign-in').hide();
   $('#sign-up').hide();
   $('#change-password').show();
