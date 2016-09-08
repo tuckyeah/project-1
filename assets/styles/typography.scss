@@ -42,6 +42,16 @@ h1 {
   letter-spacing: .2em;
 };
 
+.winner {
+  @include text-shadow(50%);
+  display: none;
+  margin-top: 20%;
+  h2 {
+    font-size: 3em;
+    font-family: $bungee-fancy;
+  }
+}
+
 .center {
   text-align: center;
 }

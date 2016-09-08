@@ -12,7 +12,7 @@ const failure = (error) => {
 };
 
 const signUpSuccess = (data) => {
-  console.log(data);
+  $('#sign-up-button').hide();
 };
 
 const signInSuccess = (data) => {

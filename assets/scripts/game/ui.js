@@ -48,23 +48,20 @@ const updateGameStatus = function() {
 
   if (status === "draw") {
     result = "It's a draw!";
-  } else if (status === null) {
-    console.log("I ran");
-    result = "Let's play!";
   } else {
     result = status + " is the winner!";
   }
 
-  $('.game-status-banner h3').text('');
-  $('.game-status-banner h3').text(result);
+  $('.winner h2').html('');
+  $('.winner').prepend('<h2>'+result+'</h2>');
 };
 
-const endGame = function(player) {
+const endGame = function() {
   $('.board-wrapper').hide();
+  updateGameStatus();
+  $('.winner').fadeIn('slow');
   game.currentGame = null;
   game.game.currentTurn = 0;
-
-  updateGameStatus();
 };
 
 const resetBoard = function() {
