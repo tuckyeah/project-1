@@ -6,6 +6,7 @@ let game = {
   xPositions: [],
   oPositions: [],
   currentTurn: 0,
+  currentIndex: 0,
   currentGame: null
 };
 

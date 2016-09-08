@@ -33,23 +33,37 @@ const validateMove = function(index) {
   }
 };
 
+// increment turn by one
 const incrementTurn = function() {
   game.game.currentTurn++;
   console.log(game.game.currentTurn);
 };
 
-
+// calls validate move, and if it's a valid move, updates the board
+// in memory and increments turn
 const playMove = function(index, player) {
-  let currentGameBoard = game.currentGame.cells;
-  // sets currentGame board to show the move by the player
-  currentGameBoard[index] = player;
 
-  // increment turn
-  incrementTurn();
+  if (validateMove(index)) {
+    let currentGameBoard = game.currentGame.cells;
 
-  debugger;
+    // sets currentGame board to show the move by the player
+    currentGameBoard[index] = player;
 
+    //set store index in game object
+
+    // increment turn
+    incrementTurn();
+
+    return true;
+
+  } else {
+    console.log("play move Error!");
+    return false;
+  }
+  // check for winner or draw
 };
+
+
 
 //used for debugging
 const returnCurrentGame = function() {

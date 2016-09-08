@@ -1,7 +1,7 @@
 'use strict';
 
 const ui = require('./ui');
-const logic = require('./game-logic');
+// const logic = require('./game-logic');
 const api = require('./api');
 const gameLogic = require('./logic');
 
@@ -15,10 +15,12 @@ const onCellClick = (event) => {
   let player = gameLogic.setPlayer();
 
 
-  if (gameLogic.validateMove(currentIndex)) {
-    gameLogic.playMove(currentIndex, player);
+  if (gameLogic.playMove(currentIndex, player)) {
+    api.updateGame(currentIndex, player)
+      .done(ui.updateGameSuccess)
+      .fail(ui.failure);
   } else {
-    console.log("error!");
+    console.log("onCellClick error!");
   }
 
 

@@ -21,13 +21,18 @@ const createGameSuccess = (data) => {
   console.log(game.currentGame);
 };
 
-const updateBoard = function(board) {
+const displayMoves = function() {
   // update UI board on client side
+  let board = game.currentGame.cells;
+
   board.forEach(function(token, index) {
     $('.game-cell#'+index).html('<p>'+token+'</p>');
   });
+};
 
-  //update board on server side
+const updateGameSuccess = function(data) {
+  console.log(data);
+  displayMoves();
 };
 
 const updateGameStatus = function(result) {
@@ -53,9 +58,10 @@ const resetBoard = function() {
 module.exports = {
   success,
   failure,
-  updateBoard,
+  displayMoves,
   updateGameStatus,
   endGame,
   resetBoard,
-  createGameSuccess
+  createGameSuccess,
+  updateGameSuccess
 };
