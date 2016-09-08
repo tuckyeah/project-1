@@ -20,8 +20,9 @@
   }
 
   @include breakpoint('large') {
+    height: auto;
     margin: 20px 20%;
-    min-width: 660px;
+    width: 800px;
   }
 }
 
@@ -35,7 +36,8 @@
   }
 
   @include breakpoint('large') {
-    padding: 5px 20px;
+    margin: 0 auto;
+    padding: 5px 0;
   }
 }
 
