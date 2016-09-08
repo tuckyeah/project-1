@@ -11,12 +11,13 @@ const failure = (error) => {
   console.log(error);
 };
 
-const signUpSuccess = (data) => {
+const signUpSuccess = () => {
   $('#sign-up-button').hide();
 };
 
 const signInSuccess = (data) => {
   app.user = data.user;
+  $('#signInModal').modal('hide');
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
   $('#change-password-button').show();
@@ -28,8 +29,14 @@ const signInSuccess = (data) => {
   gameEvents.onCreateGame();
 };
 
+const signInFailure = () => {
+  $('.alert').show();
+};
+
 const changePasswordSuccess = () => {
-  console.log('Password changed successfully.');
+  $('#changePassModal').modal('hide');
+  $('#change-password-button').css('opacity', '0.5');
+  console.log("I ran");
 };
 
 const signOutSuccess = () => {
@@ -51,5 +58,6 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
-  signUpSuccess
+  signUpSuccess,
+  signInFailure
 };

@@ -18,9 +18,9 @@ $('#sign-in-button').on('click', function() {
 });
 
   // i'll need to adjust this for bad passwords
-$('#sign-in-submit').on('click', function(){
-  $('#signInModal').modal('hide');
-});
+// $('#sign-in-submit').on('click', function(){
+//   $('#signInModal').modal('hide');
+// });
 
 // SIGN UP
 $('#sign-up-button').on('click', function() {

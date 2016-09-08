@@ -12,6 +12,20 @@ const failure = (error) => {
   console.error(error);
 };
 
+const updateGameStatus = function() {
+  let status = game.game.endGameStatus;
+  let result;
+
+  if (status === "draw") {
+    result = "It's a draw!";
+  } else {
+    result = status + " is the winner!";
+  }
+
+  $('.winner h2').html('');
+  $('.winner').prepend('<h2>'+result+'</h2>');
+};
+
 // on a successful creation of a new game
 // set currentGame property of game object to the game from the server
 // and just log some information for debugging
@@ -21,6 +35,7 @@ const createGameSuccess = (data) => {
   game.game.endGameStatus = null;
   updateGameStatus();
   $('#new-game').hide();
+  $('.winner').hide();
   $('.board-wrapper').show();
   $('.game-cell p').text('');
   console.log("New game successfully created.");
@@ -42,19 +57,6 @@ const updateGameSuccess = function() {
   displayMoves();
 };
 
-const updateGameStatus = function() {
-  let status = game.game.endGameStatus;
-  let result;
-
-  if (status === "draw") {
-    result = "It's a draw!";
-  } else {
-    result = status + " is the winner!";
-  }
-
-  $('.winner h2').html('');
-  $('.winner').prepend('<h2>'+result+'</h2>');
-};
 
 const endGame = function() {
   $('.board-wrapper').hide();

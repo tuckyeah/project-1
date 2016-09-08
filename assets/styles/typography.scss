@@ -46,9 +46,10 @@ h1 {
   @include text-shadow(50%);
   display: none;
   margin-top: 20%;
+
   h2 {
-    font-size: 3em;
     font-family: $bungee-fancy;
+    font-size: 3em;
   }
 }
 
@@ -59,4 +60,8 @@ h1 {
 .right-float {
   float: right;
   margin: 0 10px;
+}
+
+.alert {
+  display: none;
 }

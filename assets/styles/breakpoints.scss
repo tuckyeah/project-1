@@ -3,19 +3,19 @@
 .board-wrapper {
   @include breakpoint('tiny') {
     height: 100%;
-    margin: 0;
+    margin: 0 5%;
     width: 100%;
   }
 
   @include breakpoint('small') {
     height: 375px;
-    margin: 0 auto;
+    margin: 0 25%;
     width: 375px;
   }
 
   @include breakpoint('medium') {
-    margin: 0 25%;
-    min-width: 500px;
+    margin: 0 20%;
+    min-width: 660px;
     width: auto;
   }
 
@@ -64,5 +64,13 @@
     @include breakpoint('large') {
       font-size: 100px;
     }
+  }
+}
+
+// typography breakpoints
+
+.intro-text {
+  @include breakpoint('tiny') {
+    margin: 0;
   }
 }

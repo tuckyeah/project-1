@@ -21,7 +21,7 @@ const onSignIn = function (event) {
   let data = getFormFields(event.target);
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure);
+    .fail(ui.signInFailure);
 };
 
 const onChangePassword = function (event) {
