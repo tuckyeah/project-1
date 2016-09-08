@@ -41,11 +41,6 @@ const onSignOut = function (event) {
     .fail(ui.failure);
 };
 
-const testFunction = function (event) {
-  event.preventDefault();
-  console.log("I ran!");
-};
-
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);

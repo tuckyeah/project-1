@@ -8,19 +8,19 @@
     </head>
     <body class="container-fluid">
 <!-- NAVBAR for later -->
-      <!-- <nav class="navbar">
+      <nav class="navbar">
+        <button type="button" id="sign-up-button" class="btn btn-default navbar-btn navbar-right">Sign up</button>
         <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-        <button type="button" class="btn btn-default navbar-btn navbar-right">Sign up</button>
-        <button type="button" class="btn btn-default navbar-btn navbar-right">Change password</button>
+        <button type="button" id="change-password-button" class="btn btn-default navbar-btn navbar-right">Change password</button>
         <button type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
-      </nav> -->
+      </nav>
 
       <h1>Tic Tuck Toe</h1>
 
       <div class="container">
-        <div class="row" style="margin-bottom: 10px;">
-          <div class="col-xs-3">
-            <form id="sign-up">
+        <!-- <div class="row" style="margin-bottom: 10px;">
+          <div class="col-xs-3"> -->
+            <!-- <form id="sign-up">
               <fieldset>
                 <legend>Sign up!</legend>
                 <input type="email" name="credentials[email]" placeholder="Enter email">
@@ -29,10 +29,10 @@
                 <input type="submit" name="submit" value="Sign up!">
               </fieldset>
             </form>
-          </div>
+          </div> -->
 
-          <div class="col-xs-3">
-            <form id="sign-in">
+          <!-- <div class="col-xs-3">
+            <form id="sign-in-alt">
               <fieldset>
                 <legend>Sign in!</legend>
                 <input type="email" name="credentials[email]" placeholder="Enter email">
@@ -40,8 +40,8 @@
                 <input type="submit" name="submit" value="Sign in!">
               </fieldset>
             </form>
-          </div>
-
+          </div> -->
+<!--
           <div class="col-xs-3">
             <form id="change-password">
               <fieldset>
@@ -51,8 +51,8 @@
                   <input type="submit" name="submit" value="Change password!">
               </fieldset>
             </form>
-          </div>
-          <div class="col-xs-3">
+          </div> -->
+          <!-- <div class="col-xs-3">
             <form id="sign-out">
               <fieldset>
                 <legend>Sign out!</legend>
@@ -60,7 +60,7 @@
               </fieldset>
             </form>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-xs-12">
@@ -95,23 +95,14 @@
                   <div class="game-cell" id="8"></div>
               </div>
             </div>
+          </div>
         </div>
     </div>
-
-    <!-- <div class="row" id="new-game">
-      <div class="col-xs-5"></div>
-      <div class="col-xs-2">
-        <div class="btn">
-          <button type="button" class="btn btn-default">New Game</button>
-        </div>
-      </div>
-      <div class="col-xs-5"></div>
-    </div> -->
   </div>
 
   <!-- MODAL SECTION  -->
       <!-- Sign In Modal -->
-      <!-- <div class="modal fade" id="signInModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="signInModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -130,22 +121,93 @@
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" name="credentials[password" id="inputPassword3" placeholder="Password">
+                    <input type="password" class="form-control" name="credentials[password]" id="inputPassword3" placeholder="Password">
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-10">
-                    <input type="submit" class="btn btn-primary" id="sign-in-modal-button">
+                  <div class="col-sm-12">
+                    <input type="submit" class="btn btn-primary right-float" id="sign-in-submit">
                   </div>
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign Up Modal -->
+      <div class="modal fade" id="signUpModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Sign Up!</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" id="sign-up">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" name = "credentials[email]"
+                    placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Confirm Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <input type="submit" class="btn btn-primary right-float" id="sign-up-submit">
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
+
+      <!-- Change Password Modal -->
+      <div class="modal fade" id="changePassModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" id="change-password">
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Current Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="passwords[old]" placeholder="Current Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">New Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <input type="submit" class="btn btn-primary right-float" id="change-pass-submit">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </body>
 </html>

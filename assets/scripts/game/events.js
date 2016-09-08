@@ -28,7 +28,7 @@ const onCellClick = (event) => {
   }
 };
 
-const onCreateGame = (event) => {
+const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
     .done(ui.createGameSuccess)
@@ -42,5 +42,6 @@ const addHandlers = () => {
 };
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onCreateGame
 };

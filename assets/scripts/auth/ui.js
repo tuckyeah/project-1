@@ -1,6 +1,7 @@
 'use strict';
 
 let app = require('../app');
+let gameEvents = require('../game/events');
 
 const success = (data) => {
   console.log(data);
@@ -16,6 +17,7 @@ const signInSuccess = (data) => {
   $('#sign-up').hide();
   $('#change-password').show();
   $('#sign-out').show();
+  gameEvents.onCreateGame();
 };
 
 const changePasswordSuccess = () => {

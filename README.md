@@ -39,9 +39,9 @@ Making a SPA Tic Tac Toe for GA WDI
   - ~~Change password~~
   - Link game to user
   - Retrieve all user's games from server
-  - Create new game from server
+  - ~~Create new game from server~~
   - show specific game?
-  - update game status with each move
+  - ~~update game status with each move~~
 
 - Revisit HTML/css
   - separate concerns, add semantic labeling
@@ -50,3 +50,6 @@ Making a SPA Tic Tac Toe for GA WDI
   - add modals where necessary
   - Update status banner every round
   - Add 'reset game' button to the toolbar
+  - Prompt 'sign in/sign up' on page load
+  - ~~Tie new game to sign in~~
+  - Add 'wrong password' prompt
