@@ -11,6 +11,9 @@ let authEvents = require('./auth/events.js');
 
 $(document).ready(function() {
   $('#new-game').hide();
+  $('#change-password').hide();
+  $('#sign-out').hide();
+
   gameEvents.addHandlers();
   authEvents.addHandlers();
 });
