@@ -1,5 +1,5 @@
-$black: #000;
-$white: #fff;
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
 $blue: #00f;
 $red: #f00;
 
@@ -18,4 +18,13 @@ $cream: #fdfef0;
 // gives a transparent black
 @function black($opacity) {
   @return rgba(0, 0, 0, $opacity)
+};
+
+
+@function shade($color, $percentage) {
+  @return mix($black, $color, $percentage)
+};
+
+@function tint($color, $percentage) {
+  @return mix($white, $color, $percentage)
 };

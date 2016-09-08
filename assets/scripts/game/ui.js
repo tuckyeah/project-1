@@ -8,7 +8,7 @@ const updateBoard = function(board) {
 
 const updateGameStatus = function(result) {
   $('.game-status-banner').html('');
-  $('.game-status-banner').html('<h3>'+result+'</h3>');
+  $('.game-status-banner').html('<h2>'+result+'</h2>');
 };
 
 const endGame = function() {

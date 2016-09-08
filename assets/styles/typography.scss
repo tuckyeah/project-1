@@ -6,23 +6,29 @@
 $baloo: 'Baloo Paaji', cursive;
 $farsan: 'Farsan', sans-serif;
 
+// mixins
 @mixin text-shadow($opacity) {
   text-shadow: black($opacity) 0 1px 0;
 }
 
 
+//styling
 .game-cell {
+  // x's and o's
   p {
     font-family: $baloo;
   }
 }
 
 h1,
+h2,
 h3 {
+  // title and subhead
   font-family: $farsan;
 }
 
 h1 {
+  // title only
   font-size: 4em;
   font-weight: 900;
   letter-spacing: .2em;

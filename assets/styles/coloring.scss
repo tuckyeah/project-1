@@ -9,8 +9,19 @@ body {
   background-color: $powder-blue;
   border: 5px solid $cranberry;
 
+  &:hover {
+    background-color: darken($powder-blue, 5%);
+    cursor: pointer;
+  }
+
   p {
     @include text-shadow(.8);
     color: $cranberry;
+
+    &:hover {
+      color: $white;
+    }
   }
+
+
 }

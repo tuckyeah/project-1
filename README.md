@@ -37,3 +37,7 @@ Making a SPA Tic Tac Toe for GA WDI
   - Sign in
   - Sign out
   - Change password
+
+- Revisit HTML/css
+  - separate concerns, add semantic labeling
+    - Break current styling into 'grid spacing' and make a directory for themes, add current coloring to themes
