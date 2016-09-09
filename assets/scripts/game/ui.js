@@ -12,6 +12,8 @@ const failure = (error) => {
   console.error(error);
 };
 
+// view settings
+
 const updateGameStatus = function() {
   let status = game.gameData.endGameStatus;
   let result;
@@ -25,7 +27,6 @@ const updateGameStatus = function() {
   $('.winner h2').html('');
   $('.winner').prepend('<h2>'+result+'</h2>');
 };
-
 
 
 // on a successful creation of a new game
@@ -59,6 +60,10 @@ const updateGameSuccess = function() {
   displayMoves();
 };
 
+const displayWinTotals = function (winTotalArray) {
+  $('.xWins').append(winTotalArray[0]);
+  $('.oWins').append(winTotalArray[1]);
+};
 
 const endGame = function() {
   displayMoves();
@@ -85,5 +90,6 @@ module.exports = {
   endGame,
   resetBoard,
   createGameSuccess,
-  updateGameSuccess
+  updateGameSuccess,
+  displayWinTotals
 };

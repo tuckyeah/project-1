@@ -36,13 +36,19 @@ $('#change-password-button').on('click', function() {
   $('#changePassModal').modal('show');
 });
 
+const logInView = function() {
+  $('#change-password-button').hide();
+  $('#sign-out').hide();
+  $('.create-game').hide();
+  $('.win-totals-bottom').hide();
+  $('.winner').hide();
+};
+
+
 $(document).ready(function() {
+  logInView();
   gameEvents.addHandlers();
   authEvents.addHandlers();
-
-  // $('#change-password-button').hide();
-  // $('#sign-out').hide();
-  // $('.create-game').hide();
   $('.game-status-banner').hide();
   $('.board-wrapper').hide();
 

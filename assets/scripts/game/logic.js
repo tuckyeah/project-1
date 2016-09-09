@@ -144,13 +144,14 @@ const getWinners = () => {
       oWins++;
     }
   });
-  console.log(game.allGames);
-  console.log([xWins, oWins]);
+
+  return([xWins, oWins]);
 };
 
 const getAllGames = (data) => {
   game.allGames = data.games;
-  getWinners();
+  let winTotals = getWinners();
+  ui.displayWinTotals(winTotals);
 };
 
 
