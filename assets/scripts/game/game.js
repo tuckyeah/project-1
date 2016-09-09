@@ -1,6 +1,6 @@
 'use strict';
 
-let game = {
+let gameData = {
   endGameStatus: null,
   currentTurn: 0,
   currentIndex: 0,
@@ -13,10 +13,9 @@ let game = {
       [2, 5, 8],
       [0, 4, 8],
       [2, 4, 6]
-    ],
-  currentGame: null
+    ]
 };
 
 module.exports = {
-  game
+  gameData
 };

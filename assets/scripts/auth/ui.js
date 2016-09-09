@@ -36,7 +36,6 @@ const signInFailure = () => {
 const changePasswordSuccess = () => {
   $('#changePassModal').modal('hide');
   $('#change-password-button').css('opacity', '0.5');
-  console.log("I ran");
 };
 
 const signOutSuccess = () => {

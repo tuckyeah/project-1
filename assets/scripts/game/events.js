@@ -16,14 +16,12 @@ const onCellClick = (event) => {
   let player = gameLogic.setPlayer();
 
   if (gameLogic.playMove(currentIndex, player)) {
-      api.updateGame(currentIndex, player)
+      let val = game.currentGame.over;
+      api.updateGame(currentIndex, player, val)
         .done(ui.updateGameSuccess)
         .fail(ui.failure);
   } else {
     console.log("onCellClick error!");
-  }
-  if (game.currentGame.over) {
-    ui.endGame(player);
   }
 };
 
@@ -34,12 +32,21 @@ const onCreateGame = () => {
     .fail(ui.failure);
 };
 
+const onShowGames = () => {
+  event.preventDefault();
+
+  api.showGames()
+    .done(ui.success)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);
   $('.create-game').on('click', onCreateGame);
+  $('.main-header').on('click', onShowGames);
 };
 
 module.exports = {
   addHandlers,
-  onCreateGame
+  onCreateGame,
 };

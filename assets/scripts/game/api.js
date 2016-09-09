@@ -13,7 +13,7 @@ const createGame = () => {
   });
 };
 
-const updateGame = (index, val) => {
+const updateGame = (index, val, over) => {
   return $.ajax({
     url: app.host + '/games/' + game.currentGame.id,
     method: 'PATCH',
@@ -26,13 +26,24 @@ const updateGame = (index, val) => {
           "index": index,
           "value": val
         },
-        "over": false
+        "over": over
       }
+    }
+  });
+};
+
+const showGames = () => {
+  return $.ajax({
+    url: app.host + '/games/?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
     }
   });
 };
 
 module.exports = {
   createGame,
-  updateGame
+  updateGame,
+  showGames
 };

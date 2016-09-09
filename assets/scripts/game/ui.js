@@ -13,7 +13,7 @@ const failure = (error) => {
 };
 
 const updateGameStatus = function() {
-  let status = game.game.endGameStatus;
+  let status = game.gameData.endGameStatus;
   let result;
 
   if (status === "draw") {
@@ -31,8 +31,8 @@ const updateGameStatus = function() {
 // and just log some information for debugging
 const createGameSuccess = (data) => {
   game.currentGame = data.game;
-  game.game.currentTurn = 0;
-  game.game.endGameStatus = null;
+  game.gameData.currentTurn = 0;
+  game.gameData.endGameStatus = null;
   updateGameStatus();
   $('#new-game').hide();
   $('.winner').hide();
@@ -59,12 +59,12 @@ const updateGameSuccess = function() {
 
 
 const endGame = function() {
+  displayMoves();
   updateGameStatus();
   $('.board-wrapper').fadeOut('slow', function() {
       $('.winner').fadeIn('slow');
   });
-  game.currentGame = null;
-  game.game.currentTurn = 0;
+  game.gameData.currentTurn = 0;
 };
 
 const resetBoard = function() {

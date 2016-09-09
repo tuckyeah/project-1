@@ -1,11 +1,12 @@
 'use strict';
 
 let game = require('./game');
+let ui = require('./ui');
 
 // set game.player based on current turn - if 0 or even, 'x', odds 'o'
 const setPlayer = function() {
   let player;
-  let currentTurn = game.game.currentTurn;
+  let currentTurn = game.gameData.currentTurn;
 
   if (currentTurn % 2 === 0 || currentTurn === 0) {
     player = 'X';
@@ -34,8 +35,8 @@ const validateMove = function(index) {
 
 // increment turn by one
 const incrementTurn = function() {
-  game.game.currentTurn++;
-  console.log(game.game.currentTurn);
+  game.gameData.currentTurn++;
+  console.log(game.gameData.currentTurn);
 };
 // returns an array of the player's locations
 const getPlayerMoves = function(player) {
@@ -64,7 +65,7 @@ const compareArrays = function(winningCombo, playerMoves) {
 // returns true if the player has succeeded in making a
 // winning move.
 const isWinner = function(player) {
-  let winners = game.game.winningCombos;
+  let winners = game.gameData.winningCombos;
   let playerMoves = getPlayerMoves(player);
 
   if (playerMoves.length >= 3)  {
@@ -95,11 +96,11 @@ const isDraw = function() {
 // sets the currentGame.over property to true if it works
 const isGameOver = function(player) {
   if(isWinner(player)) {
-    game.game.endGameStatus = player;
+    game.gameData.endGameStatus = player;
     game.currentGame.over = true;
     return true;
   } else if (isDraw()) {
-    game.game.endGameStatus = 'draw';
+    game.gameData.endGameStatus = 'draw';
     game.currentGame.over = true;
     return true;
   } else {
@@ -115,13 +116,14 @@ const playMove = function(index, player) {
       let currentGameBoard = game.currentGame.cells;
       currentGameBoard[index] = player; // updates board in memory with user move
       incrementTurn();     // increment turn
-      isGameOver(player);
+      if(isGameOver(player)){
+        ui.endGame();
+      }
       return true;
     } else {
       console.log("play move Error!");
       return false;
     }
-
 };
 
 
