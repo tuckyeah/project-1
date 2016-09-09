@@ -47,6 +47,9 @@ const logInView = function() {
 
 $(document).ready(function() {
   logInView();
+  $('#change-password-button').show();
+  $('#sign-out').show();
+  $('.create-game').show();
   gameEvents.addHandlers();
   authEvents.addHandlers();
   $('.game-status-banner').hide();

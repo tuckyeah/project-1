@@ -59,7 +59,7 @@ h3 {
   top: 0;
 
   .btn-header {
-    float: right;
+    float:right;
     margin: 1px;
   }
 }
@@ -70,4 +70,18 @@ h3 {
 
 .win-totals-bottom {
   margin-top: -15px;
+}
+
+.container {
+  min-height: 470px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: right;
 }

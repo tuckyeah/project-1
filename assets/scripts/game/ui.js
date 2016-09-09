@@ -13,8 +13,8 @@ const failure = (error) => {
 };
 
 const displayWinTotals = function () {
-  $('.xWins').text("X: " + game.wins['X']);
-  $('.oWins').text("O: " + game.wins['O']);
+  $('.xWins').text("X: " + game.wins.X);
+  $('.oWins').text("O: " + game.wins.O);
 };
 
 
