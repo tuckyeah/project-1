@@ -27,16 +27,6 @@ const updateGameStatus = function() {
 };
 
 
-const getWinners = () => {
-  game.allGames.forEach(function(elem){
-    console.log(elem.cells);
-  });
-};
-
-const getAllGames = (data) => {
-  game.allGames = data.games;
-  getWinners();
-};
 
 // on a successful creation of a new game
 // set currentGame property of game object to the game from the server
@@ -95,6 +85,5 @@ module.exports = {
   endGame,
   resetBoard,
   createGameSuccess,
-  updateGameSuccess,
-  getAllGames
+  updateGameSuccess
 };

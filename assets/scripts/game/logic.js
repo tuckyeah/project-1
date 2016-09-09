@@ -38,9 +38,10 @@ const incrementTurn = function() {
   game.gameData.currentTurn++;
   console.log(game.gameData.currentTurn);
 };
+
 // returns an array of the player's locations
-const getPlayerMoves = function(player) {
-  let board = game.currentGame.cells;
+const getPlayerMoves = function(player, board) {
+
   let res = [];
 
   for (let i = 0; i < board.length; i++) {
@@ -64,9 +65,15 @@ const compareArrays = function(winningCombo, playerMoves) {
 
 // returns true if the player has succeeded in making a
 // winning move.
-const isWinner = function(player) {
+const isWinner = function(player, board) {
   let winners = game.gameData.winningCombos;
-  let playerMoves = getPlayerMoves(player);
+  let playerMoves;
+
+  if (!board) {
+    playerMoves = getPlayerMoves(player, game.currentGame.cells);
+  } else {
+    playerMoves = getPlayerMoves(player, board);
+  }
 
   if (playerMoves.length >= 3)  {
     for (let i=0; i < winners.length; i++) {
@@ -126,6 +133,25 @@ const playMove = function(index, player) {
     }
 };
 
+const getWinners = () => {
+  let xWins = 0;
+  let oWins = 0;
+
+  game.allGames.forEach(function(elem) {
+    if (isWinner('X', elem.cells)) {
+      xWins++;
+    } else {
+      oWins++;
+    }
+  });
+  console.log(game.allGames);
+  console.log([xWins, oWins]);
+};
+
+const getAllGames = (data) => {
+  game.allGames = data.games;
+  getWinners();
+};
 
 
 
@@ -142,5 +168,6 @@ module.exports = {
   playMove,
   incrementTurn,
   getPlayerMoves,
-  isGameOver
+  isGameOver,
+  getAllGames
 };

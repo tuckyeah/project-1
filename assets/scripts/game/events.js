@@ -1,9 +1,8 @@
 'use strict';
 
 const ui = require('./ui');
-// const logic = require('./game-logic');
 const api = require('./api');
-const gameLogic = require('./logic');
+const logic = require('./logic');
 const game = require('./game');
 
 // we need a function that will update the board
@@ -13,9 +12,9 @@ const onCellClick = (event) => {
 
   // get the index of the clicked cell
   let currentIndex = $('.game-cell').index(event.target);
-  let player = gameLogic.setPlayer();
+  let player = logic.setPlayer();
 
-  if (gameLogic.playMove(currentIndex, player)) {
+  if (logic.playMove(currentIndex, player)) {
       let val = game.currentGame.over;
       api.updateGame(currentIndex, player, val)
         .done(ui.updateGameSuccess)
@@ -36,7 +35,7 @@ const onShowGames = () => {
   event.preventDefault();
 
   api.showGames()
-    .done(ui.getAllGames)
+    .done(logic.getAllGames)
     .fail(ui.failure);
 };
 
