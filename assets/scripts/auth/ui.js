@@ -14,6 +14,7 @@ const failure = (error) => {
 // page view functions
 
 const gameBoardView = function() {
+  $('.navbar').css('visibility', 'visible')
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
   $('#change-password-button').show();
@@ -62,7 +63,6 @@ const changePasswordSuccess = () => {
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log('User signed out successfully.');
   logOutView();
 };
 

@@ -47,6 +47,10 @@
     background-color: $light-blue;
     border: 1px solid $light-blue;
   }
+
+  .main-container {
+    min-height: 470px;
+  }
 }
 
 @include breakpoint('small') {
@@ -67,6 +71,10 @@
 
   .navbar-default {
     background-color: $light-blue;
+  }
+
+  .main-container {
+    min-height: 560px;
   }
 
 
