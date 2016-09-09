@@ -36,7 +36,7 @@ const updateGameStatus = function() {
 
   incrementWinDisplay(status);
   $('.winner h2').html('');
-  $('.winner').prepend('<h2>'+result+'</h2>');
+  $('.winner').prepend('<h3>'+result+'</h3>');
 };
 
 

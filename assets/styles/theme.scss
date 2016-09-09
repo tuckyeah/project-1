@@ -10,3 +10,36 @@
     color: $navy;
   }
 }
+
+.navbar-header > .navbar-toggle.hamburger {
+  background-color: $royal-blue;
+  border-radius: 0;
+
+  .icon-bar {
+    background-color: $cream;
+  }
+}
+
+.stacked {
+  background-color: $cranberry;
+  padding: 5px;
+  margin: 5px;
+
+  &:hover {
+    background-color: $cream;
+    color: $navy;
+  }
+
+
+}
+
+// clearing the bootstrap coloring for links
+.navbar-default .navbar-nav > li > a {
+  color: $cream;
+  padding: 5px;
+
+  &:hover {
+    background-color: $cream;
+    color: $navy;
+  }
+}
