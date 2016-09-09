@@ -45,9 +45,9 @@ $(document).ready(function() {
   gameEvents.addHandlers();
   authEvents.addHandlers();
 
-  $('#change-password-button').hide();
-  $('#sign-out').hide();
-  $('.create-game').hide();
+  // $('#change-password-button').hide();
+  // $('#sign-out').hide();
+  // $('.create-game').hide();
   $('.game-status-banner').hide();
   $('.board-wrapper').hide();
 });

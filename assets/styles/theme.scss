@@ -1,56 +1,12 @@
-.board-wrapper,
-.intro-text {
-  // border: 2px dotted $navy;
-  box-sizing: border-box;
-  margin: 0 35%;
-  max-width: 660px;
-}
-
-.intro-text {
-  border: 5px dotted $cranberry;
-  margin-top: 5%;
-  max-height: 660px;
-  padding: 10%;
-}
-
-.board-line {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 10px;
-  width: 95%;
-}
 
 //TODO: add different game cell sizes for different breakpoints
+.navbar .btn-header {
+  background-color: $cranberry;
+  border: 0;
+  color: $white;
 
-.game-cell {
-  box-sizing: border-box;
-  float: left;
-  height: 100px;
-  margin: 3px;
-  padding: 10px;
-  text-align: center;
-  width: 100px;
-
-  p {
-    color: $red;
-    font-size: 50px;
+  &:hover {
+    background-color: $cream;
+    color: $navy;
   }
-}
-
-.clearfix {
-  overflow: auto;
-}
-
-.navbar-right {
-  margin: 10px;
-}
-
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-
-.game-status-banner {
-  margin: 0 auto;
 }

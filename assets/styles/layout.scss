@@ -1,0 +1,69 @@
+.board-wrapper,
+.intro-text {
+  // border: 2px dotted $navy;
+  box-sizing: border-box;
+  margin: 0 35%;
+  max-width: 660px;
+}
+
+.intro-text {
+  margin-top: 5%;
+  max-height: 660px;
+  padding: 10%;
+}
+
+.board-line {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  width: 95%;
+}
+
+.game-cell {
+  box-sizing: border-box;
+  float: left;
+  height: 80px;
+  margin: 3px;
+  padding: 10px;
+  text-align: center;
+  width: 80px;
+
+  p {
+    font-size: 50px;
+  }
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.navbar-right {
+  margin: 10px;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.game-status-banner {
+  margin: 0 auto;
+}
+
+.navbar {
+  border: 1px solid transparent;
+  min-height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .btn-header {
+    float: right;
+    margin: 1px;
+  }
+}
+
+.main-header {
+  margin-top: 10%;
+}
