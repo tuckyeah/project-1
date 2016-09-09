@@ -45,4 +45,5 @@ $(document).ready(function() {
   // $('.create-game').hide();
   $('.game-status-banner').hide();
   $('.board-wrapper').hide();
+
 });

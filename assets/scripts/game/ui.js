@@ -26,6 +26,18 @@ const updateGameStatus = function() {
   $('.winner').prepend('<h2>'+result+'</h2>');
 };
 
+
+const getWinners = () => {
+  game.allGames.forEach(function(elem){
+    console.log(elem.cells);
+  });
+};
+
+const getAllGames = (data) => {
+  game.allGames = data.games;
+  getWinners();
+};
+
 // on a successful creation of a new game
 // set currentGame property of game object to the game from the server
 // and just log some information for debugging
@@ -83,5 +95,6 @@ module.exports = {
   endGame,
   resetBoard,
   createGameSuccess,
-  updateGameSuccess
+  updateGameSuccess,
+  getAllGames
 };

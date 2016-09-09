@@ -36,9 +36,10 @@ const onShowGames = () => {
   event.preventDefault();
 
   api.showGames()
-    .done(ui.success)
+    .done(ui.getAllGames)
     .fail(ui.failure);
 };
+
 
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);
@@ -49,4 +50,5 @@ const addHandlers = () => {
 module.exports = {
   addHandlers,
   onCreateGame,
+  onShowGames,
 };

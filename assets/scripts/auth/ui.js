@@ -27,6 +27,7 @@ const signInSuccess = (data) => {
   $('.game-status-banner').show();
   $('.board-wrapper').show();
   gameEvents.onCreateGame();
+  gameEvents.onShowGames();
 };
 
 const signInFailure = () => {
