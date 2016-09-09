@@ -34,13 +34,18 @@
   }
 
   .navbar {
-    right: auto;
+    // right: auto;
   }
 
   .navbar > .btn-header {
     font-size: 12px;
     margin: 0 1px;
     position: relative;
+  }
+
+  .navbar-header {
+    background-color: $light-blue;
+    border: 1px solid $light-blue;
   }
 }
 
@@ -60,6 +65,11 @@
     width: 100px;
   }
 
+  .navbar-default {
+    background-color: $light-blue;
+  }
+
+
 }
 
 @include breakpoint('medium') {
@@ -78,6 +88,11 @@
       font-size: 75px;
     }
   }
+
+  .navbar-default {
+    background-color: $light-blue;
+  }
+
 
 }
 
@@ -107,5 +122,10 @@
       font-size: 100px;
     }
   }
+
+  .navbar-default {
+    background-color: $light-blue;
+  }
+
 
 }
