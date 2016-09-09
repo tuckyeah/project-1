@@ -145,16 +145,17 @@ const getWinners = () => {
     }
   });
 
-  return([xWins, oWins]);
+  game.wins = {
+    'X':xWins,
+    'O':oWins
+  };
 };
 
 const getAllGames = (data) => {
   game.allGames = data.games;
-  let winTotals = getWinners();
-  ui.displayWinTotals(winTotals);
+  getWinners();
+  ui.displayWinTotals();
 };
-
-
 
 //used for debugging
 const returnCurrentGame = function() {

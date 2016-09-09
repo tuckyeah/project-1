@@ -33,7 +33,6 @@ const onCreateGame = () => {
 
 const onShowGames = () => {
   event.preventDefault();
-
   api.showGames()
     .done(logic.getAllGames)
     .fail(ui.failure);

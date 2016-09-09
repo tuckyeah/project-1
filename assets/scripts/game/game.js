@@ -4,6 +4,7 @@ let gameData = {
   endGameStatus: null,
   currentTurn: 0,
   currentIndex: 0,
+  gamesPlayed: 0,
   winningCombos: [
       [0, 1, 2],
       [3, 4, 5],

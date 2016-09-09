@@ -1,7 +1,7 @@
 'use strict';
 
-// let app = require('../app');
-let game = require('../game/game');
+let game = require('./game');
+let app = require('../app');
 
 //generic success/failure functions
 const success = (data) => {
@@ -12,7 +12,17 @@ const failure = (error) => {
   console.error(error);
 };
 
-// view settings
+const displayWinTotals = function () {
+  $('.xWins').text("X: " + game.wins['X']);
+  $('.oWins').text("O: " + game.wins['O']);
+};
+
+
+const incrementWinDisplay = function(player) {
+  game.wins[player]+=1;
+  displayWinTotals(game.wins[player]);
+};
+
 
 const updateGameStatus = function() {
   let status = game.gameData.endGameStatus;
@@ -24,9 +34,11 @@ const updateGameStatus = function() {
     result = status + " is the winner!";
   }
 
+  incrementWinDisplay(status);
   $('.winner h2').html('');
   $('.winner').prepend('<h2>'+result+'</h2>');
 };
+
 
 
 // on a successful creation of a new game
@@ -36,7 +48,13 @@ const createGameSuccess = (data) => {
   game.currentGame = data.game;
   game.gameData.currentTurn = 0;
   game.gameData.endGameStatus = null;
-  updateGameStatus();
+  app.user.gameCount++;
+
+  console.log("Played games: " + app.user.gameCount);
+
+  if (app.user.gameCount > 1) {  updateGameStatus(); }
+
+  // displayWinTotals();
   $('#new-game').hide();
   $('.winner').hide();
   $('.board-wrapper').show();
@@ -47,6 +65,7 @@ const createGameSuccess = (data) => {
 };
 
 const displayMoves = function() {
+
   // update UI board on client side
   let board = game.currentGame.cells;
 
@@ -60,10 +79,6 @@ const updateGameSuccess = function() {
   displayMoves();
 };
 
-const displayWinTotals = function (winTotalArray) {
-  $('.xWins').append(winTotalArray[0]);
-  $('.oWins').append(winTotalArray[1]);
-};
 
 const endGame = function() {
   displayMoves();
@@ -86,7 +101,6 @@ module.exports = {
   success,
   failure,
   displayMoves,
-  updateGameStatus,
   endGame,
   resetBoard,
   createGameSuccess,

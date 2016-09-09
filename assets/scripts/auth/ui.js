@@ -44,6 +44,7 @@ const signUpSuccess = () => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
+  app.user.gameCount = 0;
   $('#signInModal').modal('hide');
   gameBoardView();
   gameEvents.onCreateGame();
