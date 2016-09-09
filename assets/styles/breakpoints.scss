@@ -1,5 +1,11 @@
 @import 'breakpoint';
 
+.center-page {
+  @include breakpoint('tiny') {
+    margin-top: 25%;
+  }
+}
+
 .board-wrapper {
   @include breakpoint('tiny') {
     height: 100%;
@@ -72,5 +78,11 @@
 .intro-text {
   @include breakpoint('tiny') {
     margin: 0;
+  }
+}
+
+h1 {
+  @include breakpoint('tiny') {
+    font-size: 3.5em;
   }
 }

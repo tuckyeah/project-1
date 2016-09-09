@@ -17,6 +17,14 @@ $lime-green: #cdff00;
 //white
 $eggshell: #b8b89f;
 
+// zen and tea from adobe cc
+$dark-navy: #10222b;
+$olive: #95ab63;
+$light-green: #bdd684;
+$beige: #e2f0d6;
+//cream
+
+
 // gives a transparent white
 @function white($opacity) {
   @return rgba(255, 255, 255, $opacity)
