@@ -49,6 +49,12 @@ h3 {
 
 .game-status-banner {
   margin: 0 auto;
+
+  .alert.move-error {
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+  }
 }
 
 .navbar {

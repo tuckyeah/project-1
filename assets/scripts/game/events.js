@@ -18,10 +18,11 @@ const onCellClick = (event) => {
     let val = game.currentGame.over;
     ui.turnIndicator(player);
     api.updateGame(currentIndex, player, val)
-    .done(ui.updateGameSuccess)
-    .fail(ui.failure);
+      .done(ui.updateGameSuccess)
+      .fail(ui.failure);
   } else {
-    console.log('onCellClick error!');
+    ui.invalidMove();
+    // console.log('onCellClick error!');
   }
 };
 

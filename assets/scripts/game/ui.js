@@ -3,11 +3,6 @@
 let game = require('./game');
 let app = require('../app');
 
-//generic success/failure functions
-const success = (data) => {
-  console.log(data);
-};
-
 const failure = (error) => {
   let alert_text = `Status Code ${error.status} : ${error.statusText}`;
   alert(alert_text);
@@ -79,6 +74,8 @@ const createGameSuccess = function (data) {
 
 const displayMoves = function () {
 
+  $('#wrong-move').hide();
+
   // update UI board on client side
   let board = game.currentGame.cells;
 
@@ -109,8 +106,11 @@ const resetBoard = function () {
   $('.game-cell p').text('');
 };
 
+const invalidMove = function() {
+  $('#wrong-move').show();
+};
+
 module.exports = {
-  success,
   failure,
   displayMoves,
   endGame,
@@ -119,4 +119,5 @@ module.exports = {
   updateGameSuccess,
   displayWinTotals,
   turnIndicator,
+  invalidMove
 };

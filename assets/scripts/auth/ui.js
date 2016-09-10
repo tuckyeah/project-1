@@ -3,17 +3,7 @@
 let app = require('../app');
 let gameEvents = require('../game/events');
 
-// DON'T FORGET TO REMOVE THESE
-
-const success = (data) => {
-  console.log(data);
-};
-
-const failure = (error) => {
-  console.log(error);
-};
-
-// page view functions
+// page view functions to display / hide correct buttons based on log in state
 
 const gameBoardView = function () {
   $('nav').css('visibility', 'visible');
@@ -94,8 +84,6 @@ const signOutFailure = function (error) {
 };
 
 module.exports = {
-  success,
-  failure,
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
