@@ -12,31 +12,31 @@ let authEvents = require('./auth/events.js');
 // MODAL HANDLERS
 
 // SIGN IN
-$('#sign-in-button').on('click', function() {
+$('#sign-in-button').on('click', function () {
   $('#introModal').modal('hide');
-    $('#signInModal').modal('show');
+  $('#signInModal').modal('show');
 });
 
 // SIGN UP
-$('#sign-up-button').on('click', function() {
+$('#sign-up-button').on('click', function () {
   $('#introModal').modal('hide');
-    $('#signUpModal').modal('show');
+  $('#signUpModal').modal('show');
 });
 
-$('#sign-up-submit').on('click', function(){
+$('#sign-up-submit').on('click', function () {
   $('#signUpModal').modal('hide');
 });
 
 // CHANGE PASSWORD
-$('#change-password-button').on('click', function() {
+$('#change-password-button').on('click', function () {
   $('#changePassModal').modal('show');
 });
 
-$('#change-password-button').on('click', function() {
+$('#change-password-button').on('click', function () {
   $('#changePassModal').modal('show');
 });
 
-const logInView = function() {
+const logInView = function () {
   $('nav').css('visibility', 'hidden');
   $('#change-password-button').hide();
   $('#sign-out').hide();
@@ -45,15 +45,15 @@ const logInView = function() {
   $('.winner').hide();
 };
 
-
-$(document).ready(function() {
+$(document).ready(function () {
   logInView();
-  // $('#change-password-button').show();
-  // $('#sign-out').show();
-  // $('.create-game').show();
   gameEvents.addHandlers();
   authEvents.addHandlers();
   $('.game-status-banner').hide();
   $('.board-wrapper').hide();
 
+  // Put these in for testing navbar stuff:
+  // $('#change-password-button').show();
+  // $('#sign-out').show();
+  // $('.create-game').show();
 });

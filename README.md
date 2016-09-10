@@ -59,7 +59,10 @@ Making a SPA Tic Tac Toe for GA WDI
 - Final Checks
   - Confirm clcking twice will error out / lost turn
   - Remove console.logs
-  - Clean up grunt nag and linter
-  - Reorganize css
+  - ~~Clean up grunt nag~~
+  - Clean up linter
+  - Reorganize css file structure
   - Refactor/reorganize functions where necessary
+    - Move modals to their own file
+    - clean up file naming / structure
   - Dance!

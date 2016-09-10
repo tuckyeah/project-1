@@ -15,30 +15,29 @@ const onCellClick = (event) => {
   let player = logic.setPlayer();
 
   if (logic.playMove(currentIndex, player)) {
-      let val = game.currentGame.over;
-      ui.turnIndicator(player);
-      api.updateGame(currentIndex, player, val)
-        .done(ui.updateGameSuccess)
-        .fail(ui.failure);
+    let val = game.currentGame.over;
+    ui.turnIndicator(player);
+    api.updateGame(currentIndex, player, val)
+    .done(ui.updateGameSuccess)
+    .fail(ui.failure);
   } else {
-    console.log("onCellClick error!");
+    console.log('onCellClick error!');
   }
 };
 
 const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
-    .done(ui.createGameSuccess)
-    .fail(ui.failure);
+  .done(ui.createGameSuccess)
+  .fail(ui.failure);
 };
 
 const onShowGames = () => {
   event.preventDefault();
   api.showGames()
-    .done(logic.getAllGames)
-    .fail(ui.failure);
+  .done(logic.getAllGames)
+  .fail(ui.failure);
 };
-
 
 const addHandlers = () => {
   $('.game-cell').on('click', onCellClick);

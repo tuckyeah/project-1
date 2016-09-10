@@ -4,7 +4,7 @@ let game = require('./game');
 let ui = require('./ui');
 
 // set game.player based on current turn - if 0 or even, 'x', odds 'o'
-const setPlayer = function() {
+const setPlayer = function () {
   let player;
   let currentTurn = game.gameData.currentTurn;
 
@@ -13,6 +13,7 @@ const setPlayer = function() {
   } else {
     player = 'O';
   }
+
   return player;
 };
 
@@ -21,26 +22,26 @@ const setPlayer = function() {
 // and call an updateboard function that will update the api
 // and the board?
 
-const validateMove = function(index) {
+const validateMove = function (index) {
   let currentGameBoard = game.currentGame.cells;
 
   if (currentGameBoard[index] === '') {
-    console.log("Successful move");
+    console.log('Successful move');
     return true;
   } else {
-    console.log("Invalid move");
+    console.log('Invalid move');
     return false;
   }
 };
 
 // increment turn by one
-const incrementTurn = function() {
+const incrementTurn = function () {
   game.gameData.currentTurn++;
   console.log(game.gameData.currentTurn);
 };
 
 // returns an array of the player's locations
-const getPlayerMoves = function(player, board) {
+const getPlayerMoves = function (player, board) {
 
   let res = [];
 
@@ -49,15 +50,16 @@ const getPlayerMoves = function(player, board) {
       res.push(i);
     }
   }
+
   return res;
 };
 
 //compare two arrays, and return true if every value of the second array
 // is contained within the first.
-const compareArrays = function(winningCombo, playerMoves) {
+const compareArrays = function (winningCombo, playerMoves) {
 
-  let res = winningCombo.every(function(val) {
-     return playerMoves.indexOf(val) >= 0;
+  let res = winningCombo.every(function (val) {
+    return playerMoves.indexOf(val) >= 0;
   });
 
   return res;
@@ -65,7 +67,7 @@ const compareArrays = function(winningCombo, playerMoves) {
 
 // returns true if the player has succeeded in making a
 // winning move.
-const isWinner = function(player, board) {
+const isWinner = function (player, board) {
   let winners = game.gameData.winningCombos;
   let playerMoves;
 
@@ -76,22 +78,23 @@ const isWinner = function(player, board) {
   }
 
   if (playerMoves.length >= 3)  {
-    for (let i=0; i < winners.length; i++) {
-      if(compareArrays(winners[i], playerMoves)) {
+    for (let i = 0; i < winners.length; i++) {
+      if (compareArrays(winners[i], playerMoves)) {
         return true;
       }
     }
   }
+
   // I don't know if I need this statement:
   // return false;
 };
 
 // returns true if there are no empty spaces on the board
-const isDraw = function() {
+const isDraw = function () {
   let emptySpaces = true;
   let board = game.currentGame.cells;
 
-  board.forEach(function(element) {
+  board.forEach(function (element) {
     if (element === '') {
       emptySpaces = false;
     }
@@ -101,15 +104,19 @@ const isDraw = function() {
 };
 
 // sets the currentGame.over property to true if it works
-const isGameOver = function(player) {
-  if(isWinner(player)) {
+const isGameOver = function (player) {
+
+  if (isWinner(player)) {
     game.gameData.endGameStatus = player;
     game.currentGame.over = true;
     return true;
+
   } else if (isDraw()) {
     game.gameData.endGameStatus = 'draw';
     game.currentGame.over = true;
+
     return true;
+
   } else {
     return false;
   }
@@ -117,27 +124,28 @@ const isGameOver = function(player) {
 
 // calls validate move, and if it's a valid move, updates the board
 // in memory and increments turn
-const playMove = function(index, player) {
+const playMove = function (index, player) {
 
-    if (validateMove(index)) {
-      let currentGameBoard = game.currentGame.cells;
-      currentGameBoard[index] = player; // updates board in memory with user move
-      incrementTurn();     // increment turn
-      if(isGameOver(player)){
-        ui.endGame();
-      }
-      return true;
-    } else {
-      console.log("play move Error!");
-      return false;
-    }
+  if (validateMove(index)) {
+    let currentGameBoard = game.currentGame.cells;
+    currentGameBoard[index] = player; // updates board in memory with user move
+    incrementTurn();     // increment turn
+
+    if (isGameOver(player)) { ui.endGame(); }
+
+    return true;
+
+  } else {
+    console.log('play move Error!');
+    return false;
+  }
 };
 
-const getWinners = () => {
+const getWinners = function () {
   let xWins = 0;
   let oWins = 0;
 
-  game.allGames.forEach(function(elem) {
+  game.allGames.forEach(function (elem) {
     if (isWinner('X', elem.cells)) {
       xWins++;
     } else {
@@ -146,19 +154,19 @@ const getWinners = () => {
   });
 
   game.wins = {
-    'X':xWins,
-    'O':oWins
+    X: xWins,
+    O: oWins,
   };
 };
 
-const getAllGames = (data) => {
+const getAllGames = function (data) {
   game.allGames = data.games;
   getWinners();
   ui.displayWinTotals();
 };
 
 //used for debugging
-const returnCurrentGame = function() {
+const returnCurrentGame = function () {
   console.log(game.currentGame);
   console.log(validateMove());
 };
@@ -171,5 +179,5 @@ module.exports = {
   incrementTurn,
   getPlayerMoves,
   isGameOver,
-  getAllGames
+  getAllGames,
 };
