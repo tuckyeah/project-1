@@ -33,7 +33,12 @@
         <h1 class="main-header">Tic Tuck Toe</h1>
 
         <div class="game-status-banner">
-          <div id="wrong-move" class="alert alert-warning fade in move-error" role="alert">
+
+          <div id="error-message" class="alert alert-danger fade in display-error" role="alert">
+            <!-- placeholder to display any other weird errors we might get back from the server -->
+          </div>
+
+          <div id="wrong-move" class="alert alert-warning fade in display-error" role="alert">
             <strong>
               Pick an empty spot!
             </strong>
@@ -86,9 +91,13 @@
       <footer>
         <div class="win-totals-bottom">
           <h3>
-            <span class="xWins">X : </span>
-              |
-            <span class="oWins"> O : </span>
+            <span style="text-decoration: underline">Games Won<br /></span>
+            <br />
+            <span class="x-wins">X : </span>
+            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true">
+              <!-- this isn't an empty span, it has an icon in it! -->
+            </span>
+            <span class="o-wins"> O : </span>
             </h3>
 
         </div>

@@ -22,7 +22,6 @@ const onCellClick = (event) => {
       .fail(ui.failure);
   } else {
     ui.invalidMove();
-    // console.log('onCellClick error!');
   }
 };
 

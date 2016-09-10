@@ -12,11 +12,12 @@
 }
 
 .navbar-header > .navbar-toggle.hamburger {
-  background-color: $royal-blue;
-  border-radius: 0;
+  background-color: $light-blue;
+  border: 0;
+  position: absolute;
 
   .icon-bar {
-    background-color: $cream;
+    background-color: $cranberry;
   }
 }
 
@@ -73,4 +74,13 @@
   &:focus {
     color: $cream;
   }
+}
+
+.x-wins {
+  @include text-shadow(80%);
+  color: $cream;
+}
+
+.o-wins {
+  color: $navy;
 }

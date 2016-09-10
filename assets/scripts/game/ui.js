@@ -5,12 +5,14 @@ let app = require('../app');
 
 const failure = (error) => {
   let alert_text = `Status Code ${error.status} : ${error.statusText}`;
-  alert(alert_text);
+  $('#error-message')
+    .append(alert_text)
+    .show();
 };
 
 const displayWinTotals = function () {
-  $('.xWins').text('X: ' + game.wins.X);
-  $('.oWins').text('O: ' + game.wins.O);
+  $('.x-wins').text('X: ' + game.wins.X);
+  $('.o-wins').text('O: ' + game.wins.O);
 };
 
 const incrementWinDisplay = function (player) {
@@ -29,20 +31,18 @@ const updateGameStatus = function () {
   }
 
   incrementWinDisplay(status);
-  $('.winner-text').html('');
-  $('.winner-text').prepend('<h2>' + result + '</h2>');
+  $('.winner-text')
+    .html('')
+    .prepend('<h2>' + result + '</h2>');
 };
 
 const turnIndicator = function (player) {
-  console.log(player);
   if (player === 'X') {
     $('#x-indicator').removeClass('highlighted-color');
     $('#o-indicator').addClass('highlighted-color');
   } else if (player === 'O') {
     $('#o-indicator').removeClass('highlighted-color');
     $('#x-indicator').addClass('highlighted-color');
-  } else {
-    console.log('error');
   }
 };
 
@@ -58,18 +58,13 @@ const createGameSuccess = function (data) {
   $('#o-indicator').removeClass('highlighted-color');
   $('#x-indicator').addClass('highlighted-color');
 
-  console.log('Played games: ' + app.user.gameCount);
 
   if (app.user.gameCount > 1) {  updateGameStatus(); }
 
-  // displayWinTotals();
   $('#new-game').hide();
   $('.winner').hide();
   $('.board-wrapper').show();
   $('.game-cell p').text('');
-  console.log('New game successfully created.');
-  console.log(game.currentGame);
-  console.log(game);
 };
 
 const displayMoves = function () {
@@ -84,8 +79,10 @@ const displayMoves = function () {
   });
 };
 
+// this is called in events when a game successfully updates
+// I can probably get rid of this since all it does is call one function
+// but it helps with readabilty (for me anyway)
 const updateGameSuccess = function () {
-  console.log(game);
   displayMoves();
 };
 

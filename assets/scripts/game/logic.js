@@ -3,7 +3,8 @@
 let game = require('./game');
 let ui = require('./ui');
 
-// set game.player based on current turn - if 0 or even, 'x', odds 'o'
+// set game.player based on current turn
+//  if 0 (start of game) or even, 'x', otherwise, 'o'
 const setPlayer = function () {
   let player;
   let currentTurn = game.gameData.currentTurn;
@@ -18,26 +19,15 @@ const setPlayer = function () {
 };
 
 //validates that the move goes into an empty space
-// TODO: if it does, increment current turn
-// and call an updateboard function that will update the api
-// and the board?
-
 const validateMove = function (index) {
   let currentGameBoard = game.currentGame.cells;
 
-  if (currentGameBoard[index] === '') {
-    console.log('Successful move');
-    return true;
-  } else {
-    console.log('Invalid move');
-    return false;
-  }
+  return (currentGameBoard[index] === '');
 };
 
 // increment turn by one
 const incrementTurn = function () {
   game.gameData.currentTurn++;
-  console.log(game.gameData.currentTurn);
 };
 
 // returns an array of the player's locations
@@ -84,9 +74,6 @@ const isWinner = function (player, board) {
       }
     }
   }
-
-  // I don't know if I need this statement:
-  // return false;
 };
 
 // returns true if there are no empty spaces on the board
@@ -131,16 +118,18 @@ const playMove = function (index, player) {
     currentGameBoard[index] = player; // updates board in memory with user move
     incrementTurn();     // increment turn
 
-    if (isGameOver(player)) { ui.endGame(); }
+    if (isGameOver(player)) { ui.endGame(); } // if the game is over, end the game
 
-    return true;
+    return true; // otherwise, keep going.
 
   } else {
-    console.log('play move Error!');
+
     return false;
   }
 };
 
+// creates an object in game, 'wins', that holds the win count for
+// player 'x' and 'o'
 const getWinners = function () {
   let xWins = 0;
   let oWins = 0;
@@ -159,20 +148,14 @@ const getWinners = function () {
   };
 };
 
+// gets all the games, counts the winners, and displays them
 const getAllGames = function (data) {
   game.allGames = data.games;
   getWinners();
   ui.displayWinTotals();
 };
 
-//used for debugging
-const returnCurrentGame = function () {
-  console.log(game.currentGame);
-  console.log(validateMove());
-};
-
 module.exports = {
-  returnCurrentGame,
   validateMove,
   setPlayer,
   playMove,
