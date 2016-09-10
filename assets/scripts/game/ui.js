@@ -35,11 +35,22 @@ const updateGameStatus = function() {
   }
 
   incrementWinDisplay(status);
-  $('.winner h2').html('');
+  $('.winner h3').html('');
   $('.winner').prepend('<h3>'+result+'</h3>');
 };
 
-
+const turnIndicator = function(player) {
+  console.log(player);
+  if (player === 'X') {
+    $('#x-indicator').removeClass('highlighted-color');
+    $('#o-indicator').addClass('highlighted-color');
+  } else if (player === 'O') {
+    $('#o-indicator').removeClass('highlighted-color');
+    $('#x-indicator').addClass('highlighted-color');
+  } else {
+    console.log("error");
+  }
+};
 
 // on a successful creation of a new game
 // set currentGame property of game object to the game from the server
@@ -49,6 +60,9 @@ const createGameSuccess = (data) => {
   game.gameData.currentTurn = 0;
   game.gameData.endGameStatus = null;
   app.user.gameCount++;
+  $('.turn-indicator').css('visibility', 'visible');
+  $('#o-indicator').removeClass('highlighted-color');
+  $('#x-indicator').addClass('highlighted-color');
 
   console.log("Played games: " + app.user.gameCount);
 
@@ -83,8 +97,9 @@ const updateGameSuccess = function() {
 const endGame = function() {
   displayMoves();
   updateGameStatus();
+  $('.turn-indicator').css('visibility', 'hidden');
   $('.board-wrapper').fadeOut('slow', function() {
-      $('.winner').fadeIn('slow');
+    $('.winner').fadeIn('slow');
   });
   game.gameData.currentTurn = 0;
 };
@@ -105,5 +120,6 @@ module.exports = {
   resetBoard,
   createGameSuccess,
   updateGameSuccess,
-  displayWinTotals
+  displayWinTotals,
+  turnIndicator
 };

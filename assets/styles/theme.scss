@@ -22,24 +22,28 @@
 
 .stacked {
   background-color: $cranberry;
-  padding: 5px;
   margin: 5px;
+  padding: 5px;
 
   &:hover {
-    background-color: $cream;
-    color: $navy;
+    background-color: $navy;
+    color: $cream;
   }
-
 
 }
 
 // clearing the bootstrap coloring for links
-.navbar-default .navbar-nav > li > a {
+.navbar-nav > li.stacked > a {
   color: $cream;
+  font-family: $bungee-plain;
   padding: 5px;
 
   &:hover {
-    background-color: $cream;
-    color: $navy;
+    background-color: $navy;
+    color: $cream;
+  }
+
+  &:focus {
+    color: $cream;
   }
 }

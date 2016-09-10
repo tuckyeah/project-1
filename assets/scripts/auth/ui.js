@@ -14,7 +14,7 @@ const failure = (error) => {
 // page view functions
 
 const gameBoardView = function() {
-  $('.navbar').css('visibility', 'visible')
+  $('nav').css('visibility', 'visible');
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
   $('#change-password-button').show();
@@ -27,6 +27,7 @@ const gameBoardView = function() {
 };
 
 const logOutView = function() {
+  $('nav').css('visibility', 'hidden');
   $('#sign-out').hide();
   $('.create-game').hide();
   $('#change-password-button').hide();

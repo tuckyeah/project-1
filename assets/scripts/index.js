@@ -37,7 +37,7 @@ $('#change-password-button').on('click', function() {
 });
 
 const logInView = function() {
-  // $('.navbar').css('visibility', 'hidden');
+  $('nav').css('visibility', 'hidden');
   $('#change-password-button').hide();
   $('#sign-out').hide();
   $('.create-game').hide();
@@ -48,9 +48,9 @@ const logInView = function() {
 
 $(document).ready(function() {
   logInView();
-  $('#change-password-button').show();
-  $('#sign-out').show();
-  $('.create-game').show();
+  // $('#change-password-button').show();
+  // $('#sign-out').show();
+  // $('.create-game').show();
   gameEvents.addHandlers();
   authEvents.addHandlers();
   $('.game-status-banner').hide();

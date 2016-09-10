@@ -15,6 +15,10 @@ $bungee-plain: 'Bungee', sans-serif;
   text-shadow: black($opacity) 0 1px 0;
 }
 
+@mixin bold-text-shadow($opacity) {
+  text-shadow: black($opacity) 2px 3px 0;
+}
+
 
 //styling
 .game-cell {
@@ -48,7 +52,6 @@ h1 {
   margin-top: 20%;
 
   h2 {
-    font-family: $bungee-fancy;
     font-size: 3em;
   }
 }
@@ -70,4 +73,9 @@ h1 {
   font-family: $bungee-plain;
   font-size: 1em;
   font-weight: 100;
+}
+
+.highlighted-color {
+  @include bold-text-shadow(100%);
+  color: $cream;
 }

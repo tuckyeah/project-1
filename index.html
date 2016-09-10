@@ -8,7 +8,6 @@
     </head>
     <body class="container-fluid">
       <nav class="navbar navbar-default">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed hamburger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" id="hamburger">
           <span class="sr-only">Toggle navigation</span>
@@ -21,30 +20,26 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="stacked"><a href="#" class="create-game" data-toggle='collapse' data-target="#bs-example-navbar-collapse-1">New Game</a></li>
-          <li class="stacked"><a href="#" id="change-password-button" data-toggle='collapse' data-target="#bs-example-navbar-collapse-1">Change Password</a></li>
-          <li class="stacked"><a href="#" id="sign-out" data-toggle='collapse' data-target="#bs-example-navbar-collapse-1">Sign out</a></li>
+        <ul class="nav navbar-nav navbar-right" data-toggle='collapse' data-target="#bs-example-navbar-collapse-1">
+          <li class="stacked"><a href="#" class="create-game" >New Game</a></li>
+          <li class="stacked"><a href="#" id="change-password-button">Change Password</a></li>
+          <li class="stacked"><a href="#" id="sign-out">Sign out</a></li>
         </ul>
       </div>
       </nav>
-      <!-- <nav class="navbar navbar-default">
-        <div class="container">
-          <button type="button" class="btn-header create-game">New game</button>
-          <button type="button" id="change-password-button" class="btn-header">Change password</button>
-          <button type="button" id="sign-out" class="btn-header">Sign out</button>
-        </div>
-      </nav> -->
+
       <div class="container main-container">
 
         <h1 class="main-header">Tic Tuck Toe</h1>
 
         <div class="game-status-banner">
-          <h3>Let's play! </h3>
+          <!-- <h3>Let's play! </h3> -->
           <div class="turn-indicator">
-            <h3>
-              X | O 
-            </h3>
+            <h2>
+              <span id="x-indicator">X </span>
+              |
+              <span id="o-indicator">O</span>
+            </h2>
           </div>
         </div>
 
@@ -74,10 +69,10 @@
           </h2>
         </div>
         <div class="winner">
-          <h3>
+          <h2>
             <br />
-            <button type="button" class="btn btn-success btn-lg create-game">New game</button>
-          </h3>
+            <button type="button" class="btn btn-success btn-lg create-game">Play Again</button>
+          </h2>
         </div>
       </div>
 

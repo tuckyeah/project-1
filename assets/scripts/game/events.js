@@ -16,6 +16,7 @@ const onCellClick = (event) => {
 
   if (logic.playMove(currentIndex, player)) {
       let val = game.currentGame.over;
+      ui.turnIndicator(player);
       api.updateGame(currentIndex, player, val)
         .done(ui.updateGameSuccess)
         .fail(ui.failure);
