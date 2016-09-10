@@ -149,7 +149,7 @@ const getWinners = function () {
   game.allGames.forEach(function (elem) {
     if (isWinner('X', elem.cells)) {
       xWins++;
-    } else if (isWinner('O'), elem.cells) {
+    } else if (isWinner('O', elem.cells)) {
       oWins++;
     } else {
       drawCount++;
@@ -161,6 +161,7 @@ const getWinners = function () {
     O: oWins,
     draw: drawCount,
   };
+  debugger;
 };
 
 // gets all the games, counts the winners, and displays them
