@@ -70,6 +70,10 @@
 
 @include breakpoint('small') {
 
+  .main-header {
+    margin-top: 0%;
+  }
+
   .board-wrapper {
     margin: 0 auto;
     width: 360px;
@@ -95,13 +99,18 @@
   .navbar-nav {
     float: right;
   }
+
+  .modal-dialog {
+    margin: 30px auto;
+    width: 600px;
+  }
 }
 
 @include breakpoint('medium') {
 
   .board-wrapper {
-    margin: 0 20%;
-    width: auto;
+    margin: 0 auto;
+    width: 520px;
   }
 
   .game-cell {
@@ -123,14 +132,18 @@
 
 @include breakpoint('large') {
 
+  .main-container {
+    min-height: 730px;
+  }
+
   .main-header {
-    margin-top: 5%;
+    margin-top: 0%;
   }
 
   .board-wrapper {
     height: auto;
     margin: 20px auto;
-    width: 655px;
+    width: 557px;
   }
 
   .board-line {
@@ -139,9 +152,9 @@
   }
 
   .game-cell {
-    height: 200px;
-    padding: 20px;
-    width: 200px;
+    height: 170px;
+    padding: 10px;
+    width: 170px;
 
     p {
       font-size: 100px;
@@ -150,6 +163,11 @@
 
   .navbar-default {
     background-color: $light-blue;
+  }
+
+  .modal-dialog {
+    margin: 30px auto;
+    width: 500px;
   }
 
 

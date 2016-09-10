@@ -75,12 +75,3 @@
     color: $cream;
   }
 }
-
-.x-wins {
-  @include text-shadow(80%);
-  color: $cream;
-}
-
-.o-wins {
-  color: $navy;
-}
