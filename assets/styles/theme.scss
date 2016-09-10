@@ -32,6 +32,31 @@
 
 }
 
+.btn.btn-sign-up {
+  background-color: $cranberry;
+  color: $cream;
+
+  &:hover {
+    background-color: $cream;
+    color: $cranberry;
+  }
+}
+
+.btn.btn-sign-in {
+  background-color: $navy;
+  color: $cream;
+
+  &:hover {
+    background-color: $cream;
+    color: $navy;
+  }
+}
+
+.winner h2 {
+  color: $cream;
+  font-size: 2em;
+
+}
 // clearing the bootstrap coloring for links
 // .navbar-default .navbar-nav > li > a
 

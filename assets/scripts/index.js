@@ -33,7 +33,7 @@ $('#change-password-button').on('click', function () {
 });
 
 const logInView = function () {
-  // $('nav').css('visibility', 'hidden');
+  $('nav').css('visibility', 'hidden');
   $('#change-password-button').hide();
   $('#sign-out').hide();
   $('.create-game').hide();
@@ -49,7 +49,7 @@ $(document).ready(function () {
   $('.board-wrapper').hide();
 
   // Put these in for testing navbar stuff:
-  $('#change-password-button').show();
-  $('#sign-out').show();
-  $('.create-game').show();
+  // $('#change-password-button').show();
+  // $('#sign-out').show();
+  // $('.create-game').show();
 });

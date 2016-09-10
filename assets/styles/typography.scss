@@ -47,12 +47,12 @@ h1 {
 };
 
 .winner {
-  @include text-shadow(50%);
+  @include bold-text-shadow(100%);
   display: none;
-  margin-top: 20%;
+  font-family: $bungee-fancy;
 
   h2 {
-    font-size: 3em;
+
   }
 }
 

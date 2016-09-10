@@ -9,7 +9,8 @@ const success = (data) => {
 };
 
 const failure = (error) => {
-  console.error(error);
+  let alert_text = `Status Code ${error.status} : ${error.statusText}`;
+  alert(alert_text);
 };
 
 const displayWinTotals = function () {
@@ -33,8 +34,8 @@ const updateGameStatus = function () {
   }
 
   incrementWinDisplay(status);
-  $('.winner h3').html('');
-  $('.winner').prepend('<h3>' + result + '</h3>');
+  $('.winner-text').html('');
+  $('.winner-text').prepend('<h2>' + result + '</h2>');
 };
 
 const turnIndicator = function (player) {
