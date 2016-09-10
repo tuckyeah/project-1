@@ -3,6 +3,8 @@
 let app = require('../app');
 let gameEvents = require('../game/events');
 
+// DON'T FORGET TO REMOVE THESE
+
 const success = (data) => {
   console.log(data);
 };
@@ -13,7 +15,7 @@ const failure = (error) => {
 
 // page view functions
 
-const gameBoardView = function() {
+const gameBoardView = function () {
   $('nav').css('visibility', 'visible');
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
@@ -26,7 +28,7 @@ const gameBoardView = function() {
   $('.win-totals-bottom').show();
 };
 
-const logOutView = function() {
+const logOutView = function () {
   $('nav').css('visibility', 'hidden');
   $('#sign-out').hide();
   $('.create-game').hide();
@@ -39,6 +41,8 @@ const logOutView = function() {
   $('#sign-in-button').show();
   $('#sign-up-button').show();
 };
+
+// Auth Success/Failure functions
 
 const signUpSuccess = () => {
   $('#sign-up-button').hide();
@@ -74,5 +78,5 @@ module.exports = {
   changePasswordSuccess,
   signOutSuccess,
   signUpSuccess,
-  signInFailure
+  signInFailure,
 };

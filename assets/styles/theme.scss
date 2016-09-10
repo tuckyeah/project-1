@@ -33,7 +33,8 @@
 }
 
 // clearing the bootstrap coloring for links
-.navbar-nav > li.stacked > a {
+// .navbar-nav > li.stacked > a
+.navbar-default .navbar-nav > li > a {
   color: $cream;
   font-family: $bungee-plain;
   padding: 5px;

@@ -2,40 +2,40 @@
 
 const app = require('../app');
 
-const signUp = (data) => {
+const signUp = function (data) {
   return $.ajax({
     url: app.host + '/sign-up',
     method: 'POST',
-    data: data
+    data: data,
   });
 };
 
-const signIn = (data) => {
+const signIn = function (data) {
   return $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
-    data: data
+    data: data,
   });
 };
 
-const changePassword = (data) => {
+const changePassword = function (data) {
   return $.ajax({
     url: app.host + '/change-password/' + app.user.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: data
+    data: data,
   });
 };
 
-const signOut = () => {
+const signOut = function () {
   return $.ajax({
-    url: app.host + '/sign-out/' +app.user.id,
+    url: app.host + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -43,5 +43,5 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
 };
