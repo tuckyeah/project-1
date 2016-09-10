@@ -4,15 +4,16 @@ let game = require('./game');
 let app = require('../app');
 
 const failure = (error) => {
-  let alert_text = `Status Code ${error.status} : ${error.statusText}`;
+  let alertText = `Status Code ${error.status} : ${error.statusText}`;
   $('#error-message')
-    .append(alert_text)
+    .append(alertText)
     .show();
 };
 
 const displayWinTotals = function () {
   $('.x-wins').text('X: ' + game.wins.X);
   $('.o-wins').text('O: ' + game.wins.O);
+  $('.draw-count').text('Draws: ' + game.wins.draw);
 };
 
 const incrementWinDisplay = function (player) {
@@ -58,7 +59,6 @@ const createGameSuccess = function (data) {
   $('#o-indicator').removeClass('highlighted-color');
   $('#x-indicator').addClass('highlighted-color');
 
-
   if (app.user.gameCount > 1) {  updateGameStatus(); }
 
   $('#new-game').hide();
@@ -103,7 +103,7 @@ const resetBoard = function () {
   $('.game-cell p').text('');
 };
 
-const invalidMove = function() {
+const invalidMove = function () {
   $('#wrong-move').show();
 };
 
@@ -116,5 +116,5 @@ module.exports = {
   updateGameSuccess,
   displayWinTotals,
   turnIndicator,
-  invalidMove
+  invalidMove,
 };

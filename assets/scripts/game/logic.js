@@ -58,7 +58,17 @@ const compareArrays = function (winningCombo, playerMoves) {
 // returns true if the player has succeeded in making a
 // winning move.
 const isWinner = function (player, board) {
-  let winners = game.gameData.winningCombos;
+  // let winners = game.gameData.winningCombos;
+  let winners = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+      ];
   let playerMoves;
 
   if (!board) {
@@ -74,6 +84,7 @@ const isWinner = function (player, board) {
       }
     }
   }
+  return false;
 };
 
 // returns true if there are no empty spaces on the board
@@ -133,18 +144,22 @@ const playMove = function (index, player) {
 const getWinners = function () {
   let xWins = 0;
   let oWins = 0;
+  let drawCount = 0;
 
   game.allGames.forEach(function (elem) {
     if (isWinner('X', elem.cells)) {
       xWins++;
-    } else {
+    } else if (isWinner('O'), elem.cells) {
       oWins++;
+    } else {
+      drawCount++;
     }
   });
 
   game.wins = {
     X: xWins,
     O: oWins,
+    draw: drawCount,
   };
 };
 
@@ -152,6 +167,7 @@ const getWinners = function () {
 const getAllGames = function (data) {
   game.allGames = data.games;
   getWinners();
+  console.log(getWinners());
   ui.displayWinTotals();
 };
 

@@ -28,15 +28,15 @@ const onCellClick = (event) => {
 const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
-  .done(ui.createGameSuccess)
-  .fail(ui.failure);
+    .done(ui.createGameSuccess)
+    .fail(ui.failure);
 };
 
 const onShowGames = () => {
   event.preventDefault();
   api.showGames()
-  .done(logic.getAllGames)
-  .fail(ui.failure);
+    .done(logic.getAllGames)
+    .fail(ui.failure);
 };
 
 const addHandlers = () => {

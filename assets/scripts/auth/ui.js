@@ -79,8 +79,8 @@ const signOutSuccess = () => {
 };
 
 const signOutFailure = function (error) {
-  let alert_text = `Status code ${error.status} : ${error.statusText}`;
-  alert(alert_text);
+  let alertText = `Status code ${error.status} : ${error.statusText}`;
+  $('#error-message').append(alertText);
 };
 
 module.exports = {
@@ -91,5 +91,5 @@ module.exports = {
   signInFailure,
   signUpFailure,
   changePasswordFailure,
-  signOutFailure
+  signOutFailure,
 };
