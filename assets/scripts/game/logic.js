@@ -58,17 +58,7 @@ const compareArrays = function (winningCombo, playerMoves) {
 // returns true if the player has succeeded in making a
 // winning move.
 const isWinner = function (player, board) {
-  // let winners = game.gameData.winningCombos;
-  let winners = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-      ];
+  let winners = game.gameData.winningCombos;
   let playerMoves;
 
   if (!board) {
@@ -84,6 +74,7 @@ const isWinner = function (player, board) {
       }
     }
   }
+
   return false;
 };
 
@@ -161,14 +152,12 @@ const getWinners = function () {
     O: oWins,
     draw: drawCount,
   };
-  debugger;
 };
 
 // gets all the games, counts the winners, and displays them
 const getAllGames = function (data) {
   game.allGames = data.games;
   getWinners();
-  console.log(getWinners());
   ui.displayWinTotals();
 };
 
