@@ -11,7 +11,7 @@ const onSignUp = function (event) {
   let data = getFormFields(event.target);
   api.signUp(data)
     .done(ui.signUpSuccess)
-    .fail(ui.failure);
+    .fail(ui.signUpFailure);
 };
 
 const onSignIn = function (event) {
@@ -30,14 +30,14 @@ const onChangePassword = function (event) {
 
   api.changePassword(data)
     .done(ui.changePasswordSuccess)
-    .fail(ui.failure);
+    .fail(ui.changePasswordFailure);
 };
 
 const onSignOut = function (event) {
   event.preventDefault();
   api.signOut()
     .done(ui.signOutSuccess)
-    .fail(ui.failure);
+    .fail(ui.signOutFailure);
 };
 
 const addHandlers = () => {

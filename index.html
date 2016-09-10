@@ -97,9 +97,9 @@
               <h4 class="modal-title" id="myModalLabel">Sign in!</h4>
             </div>
             <div class="modal-body">
-              <div class="alert alert-danger" role="alert">
+              <div id="sign-in-fail" class="alert alert-danger" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-                    <!--  -->
+                    <!-- leave me alone linter -->
                 </span>
                 <span class="sr-only">Error:</span>
                 Wrong Password
@@ -138,6 +138,13 @@
               <h4 class="modal-title" id="myModalLabel">Sign Up!</h4>
             </div>
             <div class="modal-body">
+              <div id="sign-up-fail" class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+                  <!-- these spans are here for a reason -->
+                </span>
+              <span class="sr-only">Error:</span>
+              That email already exists in our database. Please try another.
+            </div>
               <form class="form-horizontal" id="sign-up">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
@@ -178,6 +185,13 @@
               <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
             </div>
             <div class="modal-body">
+              <div id="change-pass-fail" class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+                    <!-- leave me alone linter -->
+                </span>
+                <span class="sr-only">Error:</span>
+                Whoops! That didn't work. Please try again.
+              </div>
               <form class="form-horizontal" id="change-password">
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">Current Password</label>

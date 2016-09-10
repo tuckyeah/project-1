@@ -45,7 +45,12 @@ const logOutView = function () {
 // Auth Success/Failure functions
 
 const signUpSuccess = () => {
+  $('#signUpModal').modal('hide');
   $('#sign-up-button').hide();
+};
+
+const signUpFailure = () => {
+  $('.alert#sign-up-fail').show();
 };
 
 const signInSuccess = (data) => {
@@ -57,8 +62,12 @@ const signInSuccess = (data) => {
   gameEvents.onShowGames();
 };
 
-const signInFailure = () => {
-  $('.alert').show();
+const signInFailure = (error) => {
+  $('.alert#sign-in-fail')
+    .append(`
+      (Status Code
+      ${error.status} : ${error.statusText})`)
+    .show();
 };
 
 const changePasswordSuccess = () => {
@@ -66,9 +75,22 @@ const changePasswordSuccess = () => {
   $('#change-password-button').css('opacity', '0.5');
 };
 
+const changePasswordFailure = (error) => {
+  $('.alert#-change-pass-fail')
+    .append(`
+      (Status Code
+      ${error.status} : ${error.statusText})`)
+    .show();
+};
+
 const signOutSuccess = () => {
   app.user = null;
   logOutView();
+};
+
+const signOutFailure = function (error) {
+  let alert_text = `Status code ${error.status} : ${error.statusText}`;
+  alert(alert_text);
 };
 
 module.exports = {
@@ -79,4 +101,7 @@ module.exports = {
   signOutSuccess,
   signUpSuccess,
   signInFailure,
+  signUpFailure,
+  changePasswordFailure,
+  signOutFailure
 };
