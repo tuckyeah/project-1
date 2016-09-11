@@ -1,68 +1,82 @@
 # Project 1: Tic Tac Toe
 
-##Brief Description:
+https://tuckyeah.github.io/project-1/
 
-Making a SPA Tic Tac Toe for GA WDI
+Game created for Web Developiment Initiative course at General Assembly Boston,
+based on the [specs](https://github.com/ga-wdi-boston/game-project) provided.
 
-##To Do List:
+## Features
 
-- ~~Create wireframes of site~~
+- API Authentication for Sign up / sign in / change password / sign out
+- Clickable game board that displays moves
+- Display of user's complete game history (X wins, O wins, Draw games)
+- Turn indicator for X or O turn
+- Game over message to indicate the winner of the game
+- New Game / Play Again button to start a new game during/at the end of a game.
 
-- ~~Write User Stories~~
+## Technologies Used:
 
-- ~~Draw model entities~~
+- Bootstrap
+- SCSS/SASS
+- JavaScript
+- jQuery
+- AJAX
+- Additional technologies (grunt, 'require' system, etc) from General Assembly [browser template](https://github.com/ga-wdi-boston/browser-template)
 
-- ~~Create project repo and write README~~
+## Development Process
 
-- Rough HTML/CSS
-  - ~~Create grid and prevent it from breaking on different window sizes~~
-  - ~~Create forms for Sign In / Sign up / Change password / log out~~
-  - ~~Create 'X' and 'O' styling for cells~~
-  - ~~Add breakpoint styling for new game button and banner header~~
-  - ~~Adjust padding around game board/banner to give us some breathing room~~
-  - ~~Add a seperate div for game winning message / button~~
+### Planning
 
-- Begin game logic
-  - ~~Click on a cell / select a cell~~
-  - ~~Display HTML in cell ('x' or 'o')~~
-  - ~~Validate move against server~~
-  - ~~Win game~~
-  - ~~Draw game~~
-  - ~~Restart game~~
-  - ~~Confirm game resets after multiple rounds~~
+For the most part, I tried to keep my development process similar to
+the [suggested schedule](https://github.com/ga-wdi-boston/game-project/blob/master/schedule.md) for this project.
+
+Before starting to code, I looked at similar, simple web games like [2048](https://gabrielecirulli.github.io/2048/) to see their structure and layout for both desktop and mobile.
+
+Then I began sketching out rough [wireframes](https://github.com/tuckyeah/game-project-scope-study/tree/response/wireframes) and adjusted them based on my [user stories](https://github.com/tuckyeah/game-project-scope-study/blob/response/study.md).
+
+I began to write some rough model entities and wireframes to plan my program and file structure, as well as identifying how I would break apart the user's / game actions into discrete functions. Once I had a rough sense of how I was going to tackle this, I began to start coding.
+
+### Development Process
+
+The first thing I did was build a very rough 'wireframe' HTML / CSS page that would display a title, authentication forms, and a simple grid. Before I jumped into interacting with the grid, however, I switched from there into beginning to develop the game logic.
+
+For this process, I stuck to developing mostly in the node REPL to make sure the logic was sound. Once I was confident that the JS dictating the game and win conditions was fairly complete, I began to work with jQuery on the GUI, and making sure the visual gameboard updated correctly based on the game board stored in memory.
+
+After the game was functional and playable on the HTML page, I moved into working on authentication. I first completed the basic auth functions of sign up, sign in, change password, and sign out, and making sure that the correct buttons for each of these functions appeared at the right time (eg 'sign out' was not visible before you had signed up/signed in).
+
+Then I began to refactor my game logic and jQuery to include the calls to the API, to update the game board with each move and creating a new game. Once this was complete, I tackled retrieving the complete list of games associated with a user from the API and using that data to display the win / loss / draw ratio of every complete game they had played.
+
+After all this was done, the rest of my time was mostly spent on making tweaks to the UI and making sure it looked good and functioned right on mobile devices as well. I played around a lot with color schemes and layout, and was able to simultaneously sign up and log in without having to through an extra step, which was pretty exciting.
+
+## Unsolved Problems and Next Steps
+
+- Reorganize my JS and CSS file structure - I think my current set up is a little cluttered and probably not the most efficient at separating concerns.
+
+- Use constructors and prototypes for the game / user objects - I'm not totally sure how I would do this quite yet, but hopefully as we spend more time on the principles of Object Oriented Programming, I'll be able to come back to this.
 
 
-- Begin Server Authentication
-  - ~~Add new user~~
-  - ~~Sign in~~
-  - ~~Sign out~~
-  - ~~Change password~~
-  - ~~Link game to user~~
-  - ~~Retrieve all user's games from server~~
-  - ~~Create new game from server~~
-  - ~~update game status with each move~~
 
-- Revisit HTML/css
-  - separate concerns, add semantic labeling
-    - Break current styling into 'grid spacing' and make a directory for themes, add current coloring to themes
+- Add the ability for the user to choose custom tokens - I really want to do a Donald Trump / Hillary Clinton option.
 
-  - ~~add modals where necessary~~
-  - ~~Update status banner every round~~
-  - ~~Add 'reset game' button to the toolbar~~
-  - ~~Prompt 'sign in/sign up' on page load~~
-  - ~~Tie new game to sign in~~
-  - ~~Add 'wrong password' prompt~~
-  - ~~Prettify~~
-  - ~~Check for mobile friendly use~~
-  - ~~Make sure the move displays before the ending game message appears~~
 
-- Final Checks
-  - Confirm clcking twice will error out / lost turn
-  - Remove console.logs
-  - ~~Clean up grunt nag~~
-  - Clean up linter
-  - Reorganize css file structure
-  - Refactor/reorganize functions where necessary
-    - Move modals to their own file
-    - clean up file naming / structure
-  - Dance!
+
+- Add the ability to change / choose from a selection of color schemes
+
+
+
+- Save game data so a player can later resume a game
+
+
+
+- Add multiplayer functionality so two players can compete on two separate devices.
+
+
+
+- Fix a handful of small layout issues for all screen sizes - there's a few scaling issues that don't quite look the way I'd like.
+
+
+## Wireframes and User Stories
+
+- [Wireframes](https://github.com/tuckyeah/game-project-scope-study/tree/response/wireframes)
+
+- [User Stories](https://github.com/tuckyeah/game-project-scope-study/blob/response/study.md)

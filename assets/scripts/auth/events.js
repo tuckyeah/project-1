@@ -12,6 +12,7 @@ const onSignUp = function (event) {
   let signUpData = getFormFields(event.target);
   api.signUp(signUpData)
     .done(function(data, textStatus, jqXHR) {
+      // these variables are what the done function returns every time
       api.autoLogIn(data, textStatus, jqXHR, signUpData)
         .done(ui.signInSuccess)
         .fail(ui.signInFailure);
