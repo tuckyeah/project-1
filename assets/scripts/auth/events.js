@@ -5,12 +5,17 @@ const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
+
 const onSignUp = function (event) {
   event.preventDefault();
 
-  let data = getFormFields(event.target);
-  api.signUp(data)
-    .done(ui.signUpSuccess)
+  let signUpData = getFormFields(event.target);
+  api.signUp(signUpData)
+    .done(function(data, textStatus, jqXHR) {
+      api.autoLogIn(data, textStatus, jqXHR, signUpData)
+        .done(ui.signInSuccess)
+        .fail(ui.signInFailure);
+    })
     .fail(ui.signUpFailure);
 };
 

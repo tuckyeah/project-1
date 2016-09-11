@@ -39,9 +39,18 @@ const signOut = function () {
   });
 };
 
+const autoLogIn = function (data, textStatus, jqXHR, signUpData) {
+  return $.ajax({
+    url: app.host + '/sign-in',
+    method: 'POST',
+    data: signUpData
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
+  autoLogIn
 };

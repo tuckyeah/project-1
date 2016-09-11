@@ -94,13 +94,9 @@
             <span style="text-decoration: underline">Games Won<br /></span>
             <br />
             <span class="x-wins">X : </span>
-            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true">
-              <!-- this isn't an empty span, it has an icon in it! -->
-            </span>
+            |
             <span class="o-wins"> O : </span>
-            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true">
-              <!-- this isn't an empty span, it has an icon in it! -->
-            </span>
+            |
             <span class="draw-count">Draws: </span>
             </h3>
 
@@ -118,11 +114,8 @@
             </div>
             <div class="modal-body">
               <div id="sign-in-fail" class="alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-                    <!-- leave me alone linter -->
-                </span>
                 <span class="sr-only">Error:</span>
-                Wrong Password
+                Incorrect username/password likely. Try again.
               </div>
               <form class="form-horizontal" id="sign-in">
                 <div class="form-group">
@@ -159,11 +152,8 @@
             </div>
             <div class="modal-body">
               <div id="sign-up-fail" class="alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-                  <!-- these spans are here for a reason -->
-                </span>
               <span class="sr-only">Error:</span>
-              That email already exists in our database. Please try another.
+               Something went wrong! Please try again with a different email address.
             </div>
               <form class="form-horizontal" id="sign-up">
                 <div class="form-group">
@@ -206,9 +196,6 @@
             </div>
             <div class="modal-body">
               <div id="change-pass-fail" class="alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-                    <!-- leave me alone linter -->
-                </span>
                 <span class="sr-only">Error:</span>
                 Whoops! That didn't work. Please try again.
               </div>

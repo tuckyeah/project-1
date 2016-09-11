@@ -46,6 +46,7 @@ const signUpFailure = () => {
 const signInSuccess = (data) => {
   app.user = data.user;
   app.user.gameCount = 0;
+  $('#signUpModal').modal('hide');
   $('#signInModal').modal('hide');
   gameBoardView();
   gameEvents.onCreateGame();
@@ -80,7 +81,9 @@ const signOutSuccess = () => {
 
 const signOutFailure = function (error) {
   let alertText = `Status code ${error.status} : ${error.statusText}`;
-  $('#error-message').append(alertText);
+  $('.alert#error-message')
+    .append(alertText)
+    .show();
 };
 
 module.exports = {

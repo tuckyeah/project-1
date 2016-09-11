@@ -90,7 +90,7 @@ const endGame = function () {
   displayMoves();
   updateGameStatus();
   $('.turn-indicator').css('visibility', 'hidden');
-  $('.board-wrapper').fadeOut('slow', function () {
+  $('.board-wrapper').fadeOut('fast', function () {
     $('.winner').fadeIn('slow');
   });
   game.gameData.currentTurn = 0;
