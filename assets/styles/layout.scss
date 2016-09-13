@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0 35%;
   max-width: 660px;
+  width: 30vmin;
 }
 
 .intro-text {
@@ -22,11 +23,11 @@
 .game-cell {
   box-sizing: border-box;
   float: left;
-  height: 80px;
+  height: 15vmin;
   margin: 3px;
   padding: 10px;
   text-align: center;
-  width: 80px;
+  width: 15vmin;
 
   p {
     font-size: 50px;
