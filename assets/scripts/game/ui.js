@@ -63,7 +63,7 @@ const createGameSuccess = function (data) {
 
   $('#new-game').hide();
   $('.winner').hide();
-  $('.board-wrapper').show();
+  $('.board-wrapper').css('display', 'flex');
   $('.game-cell p').text('');
 };
 
@@ -98,7 +98,7 @@ const endGame = function () {
 
 const resetBoard = function () {
   $('#new-game').hide();
-  $('.board-wrapper').show();
+  $('.board-wrapper').css('display', 'flex');
   $('.game-status-banner').html('<h3>Let\'s play!</h3>');
   $('.game-cell p').text('');
 };

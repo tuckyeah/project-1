@@ -14,17 +14,17 @@ const gameBoardView = function () {
   $('.create-game').show();
   $('.intro-text').hide();
   $('.game-status-banner').show();
-  $('.board-wrapper').show();
+  $('.board-wrapper').css('display', 'flex');
   $('.win-totals-bottom').show();
 };
 
 const logOutView = function () {
   $('nav').css('visibility', 'hidden');
   $('#sign-out').hide();
-  $('.create-game').hide();
+  $('.create-game').show();
   $('#change-password-button').hide();
   $('.game-status-banner').hide();
-  $('.board-wrapper').hide();
+  $('.board-wrapper').css('display', 'none');
   $('.winner').hide();
   $('.win-totals-bottom').hide();
   $('.intro-text').show();
@@ -55,7 +55,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = (error) => {
   $('.alert#sign-in-fail')
-    .append(`
+    .html(`
       (Status Code
       ${error.status} : ${error.statusText})`)
     .show();
@@ -68,7 +68,7 @@ const changePasswordSuccess = () => {
 
 const changePasswordFailure = (error) => {
   $('.alert#-change-pass-fail')
-    .append(`
+    .html(`
       (Status Code
       ${error.status} : ${error.statusText})`)
     .show();
@@ -82,7 +82,7 @@ const signOutSuccess = () => {
 const signOutFailure = function (error) {
   let alertText = `Status code ${error.status} : ${error.statusText}`;
   $('.alert#error-message')
-    .append(alertText)
+    .html(alertText)
     .show();
 };
 

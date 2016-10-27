@@ -46,7 +46,7 @@ $(document).ready(function () {
   gameEvents.addHandlers();
   authEvents.addHandlers();
   $('.game-status-banner').hide();
-  $('.board-wrapper').hide();
+  $('.board-wrapper').css('display', 'none');
 
   // Put these in for testing navbar stuff:
   // $('#change-password-button').show();
