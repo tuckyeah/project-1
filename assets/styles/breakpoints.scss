@@ -5,16 +5,16 @@
     margin-top: 20%;
   }
 
-  .board-wrapper {
-    height: 100%;
-    margin: 10% auto;
-    width: 260px;
-  }
-
-  .board-line {
-    padding: 0;
-    width: auto;
-  }
+  // .board-wrapper {
+  //   height: 100%;
+  //   margin: 10% auto;
+  //   width: 260px;
+  // }
+  //
+  // .board-line {
+  //   padding: 0;
+  //   width: auto;
+  // }
 
   .intro-text {
     margin: 0;
@@ -29,9 +29,9 @@
     margin-top: -5%;
   }
 
-  .game-cell {
-    padding: 0;
-  }
+  // .game-cell {
+  //   padding: 0;
+  // }
 
   .navbar-default {
     background-color: $light-blue;
@@ -73,20 +73,20 @@
   .main-header {
     margin-top: 0%;
   }
-
-  .board-wrapper {
-    margin: 0 auto;
-    width: 360px;
-  }
-
-  .board-line {
-    margin: 0 auto;
-  }
-
-  .game-cell {
-    height: 100px;
-    width: 100px;
-  }
+  //
+  // .board-wrapper {
+  //   margin: 0 auto;
+  //   width: 360px;
+  // }
+  //
+  // .board-line {
+  //   margin: 0 auto;
+  // }
+  //
+  // .game-cell {
+  //   height: 100px;
+  //   width: 100px;
+  // }
 
   .navbar-default {
     background-color: $light-blue;
@@ -108,20 +108,20 @@
 
 @include breakpoint('medium') {
 
-  .board-wrapper {
-    margin: 0 auto;
-    width: 520px;
-  }
-
-  .game-cell {
-    height: 150px;
-    padding: 15px;
-    width: 150px;
-
-    p {
-      font-size: 75px;
-    }
-  }
+  // .board-wrapper {
+  //   margin: 0 auto;
+  //   width: 520px;
+  // }
+  //
+  // .game-cell {
+  //   height: 150px;
+  //   padding: 15px;
+  //   width: 150px;
+  //
+  //   p {
+  //     font-size: 75px;
+  //   }
+  // }
 
   .navbar-default {
     background-color: $light-blue;
@@ -140,22 +140,22 @@
     margin-top: 0%;
   }
 
-  .board-wrapper {
-    height: auto;
-    margin: 20px auto;
-    width: 50vmin;
-  }
-
-  .board-line {
-    margin: 0 auto;
-    padding: 5px 0;
-  }
-
-  .game-cell {
-    height: 15vmin;
-    padding: 10px;
-    width: 15vmin;
-  }
+  // .board-wrapper {
+  //   height: auto;
+  //   margin: 20px auto;
+  //   width: 50vmin;
+  // }
+  //
+  // .board-line {
+  //   margin: 0 auto;
+  //   padding: 5px 0;
+  // }
+  //
+  // .game-cell {
+  //   height: 15vmin;
+  //   padding: 10px;
+  //   width: 15vmin;
+  // }
 
   .navbar-default {
     background-color: $light-blue;
