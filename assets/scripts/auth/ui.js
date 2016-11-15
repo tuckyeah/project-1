@@ -15,7 +15,9 @@ const gameBoardView = function () {
   $('.intro-text').hide();
   $('.game-status-banner').show();
   $('.board-wrapper').css('display', 'flex');
-  $('.win-totals-bottom').show();
+  if (app.user.email !== 'temp123@user123') {
+    $('.win-totals-bottom').show();
+  }
 };
 
 const logOutView = function () {
@@ -50,7 +52,9 @@ const signInSuccess = (data) => {
   $('#signInModal').modal('hide');
   gameBoardView();
   gameEvents.onCreateGame();
-  gameEvents.onShowGames();
+  if (app.user.email !== 'temp123@user123') {
+    gameEvents.onShowGames();
+  }
 };
 
 const signInFailure = (error) => {

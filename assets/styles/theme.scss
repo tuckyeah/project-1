@@ -53,10 +53,20 @@
   }
 }
 
+
+.btn.btn-just-play {
+  background-color: lighten($cranberry, 20%);
+  color: $cream;
+
+  &:hover {
+    background-color: $cream;
+    color: $powder-blue;
+  }
+}
+
 .winner h2 {
   color: $cream;
   font-size: 2em;
-
 }
 // clearing the bootstrap coloring for links
 // .navbar-default .navbar-nav > li > a
