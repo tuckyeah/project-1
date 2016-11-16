@@ -34,7 +34,8 @@ $('#change-password-button').on('click', function () {
 
 const logInView = function () {
   $('nav').css('visibility', 'hidden');
-  $('#change-password-button').hide();
+  $('li.stacked:nth-child(2)').hide();
+  // $('#change-password-button').hide();
   $('#sign-out').hide();
   $('.create-game').hide();
   $('.win-totals-bottom').hide();
