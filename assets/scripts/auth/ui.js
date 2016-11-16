@@ -9,7 +9,6 @@ const gameBoardView = function () {
   $('nav').css('visibility', 'visible');
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
-  $('#change-password-button').show();
   $('#sign-out').show();
   $('.create-game').show();
   $('.intro-text').hide();
@@ -17,6 +16,8 @@ const gameBoardView = function () {
   $('.board-wrapper').css('display', 'flex');
   if (app.user.email !== 'temp123@user123') {
     $('.win-totals-bottom').show();
+    $('li.stacked:nth-child(2)').show();
+    $('#change-password-button').show();
   }
 };
 
@@ -24,7 +25,7 @@ const logOutView = function () {
   $('nav').css('visibility', 'hidden');
   $('#sign-out').hide();
   $('.create-game').show();
-  $('#change-password-button').hide();
+  $('li.stacked:nth-child(2)').hide();
   $('.game-status-banner').hide();
   $('.board-wrapper').css('display', 'none');
   $('.winner').hide();
